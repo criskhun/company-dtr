@@ -2,9 +2,9 @@
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>G</b>NET</span>
+      <span class="logo-mini"><b>E</b>ZD</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>GNET</b> Group of Companies</span>
+      <span class="logo-lg"><b>EZD</b> Marketing</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">

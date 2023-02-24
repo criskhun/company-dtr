@@ -9,7 +9,7 @@
 <div class="login-box">
   	<div class="login-logo">
   		<b>Admin Login</b>
-		<p><i class="fa fa-address-card"></i>&nbsp;  Company</p>
+		<p><i class="fa fa-address-card"></i>&nbsp;  EZD Marketing</p>
   	</div>
   
   	<div class="login-box-body">

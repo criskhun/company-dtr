@@ -7,7 +7,7 @@ Made with love and stupidness
 
 The MIT License (MIT)
 
-Copyright (c) 2020 Attendance and Payoll System
+Copyright (c) 2020 Karl Joseph Saycon, MSIT
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

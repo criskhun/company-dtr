@@ -1,21 +1,14 @@
 <?php session_start(); ?>
 <?php include 'header.php'; ?>
 <body class="hold-transition login-page">
-
 <div class="login-box">
   	<div class="login-logo">
-      <p><i class="fa fa-address-card"></i>&nbsp;  Company </p>
+      <p><i class="fa fa-address-card"></i>&nbsp;  EZD Marketing</p>
   		<p id="date"></p>
       <p id="time" class="bold"></p>  
   	</div>
-
-    <div id="qr-reader" style="width: 100%; min-height: 100px; text-align: center;"></div>
-    <div id="qr-reader-results"></div>
-
-
-
+  
   	<div class="login-box-body">
-      
     	<h4 class="login-box-msg">Attendance Stamp</h4>
 
     	<form id="attendance">
@@ -51,6 +44,7 @@
     <!--button  onclick="window.location.href='/apsystem/emp/'" class="btn btn-primary btn-block btn-flat"><i class="fa fa-user-o"></i>&nbsp;   Employee Sign In</button-->
 
 </div>
+
       
   
 
@@ -89,18 +83,6 @@ $(function() {
   });
     
 });
-
-function onScanSuccess(decodedText, decodedResult) {
-    console.log(`Code scanned = ${decodedText}`, decodedResult);
-    document.getElementById("employee").value = decodedText;
-    document.querySelector("button[type='submit']").click();
-    html5QrcodeScanner.clear();
-    
-}
-var html5QrcodeScanner = new Html5QrcodeScanner(
-	"qr-reader", { fps: 10, qrbox: 250 });
-html5QrcodeScanner.render(onScanSuccess);
-
 </script>
 </body>
 </html>
