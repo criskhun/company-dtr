@@ -163,13 +163,13 @@ $(function(){
  
   $('#wpayroll').click(function(e){
     e.preventDefault();
-    $('#payForm').attr('action', 'payroll_generate_weekly.php');
+    $('#payForm').attr('action', 'payroll_generate_weekly.php','_blank');
     $('#payForm').submit();
   });
 
   $('#apayroll').click(function(e){
     e.preventDefault();
-    $('#payForm').attr('action', 'payroll_generate_all.php');
+    $('#payForm').attr('action', 'payroll_generate_all.php','_blank');
     $('#payForm').submit();
   });
 
