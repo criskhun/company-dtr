@@ -29,7 +29,7 @@
           <ul class="treeview-menu">
             <li><a href="employee.php"><i class="fa fa-circle-o"></i> Emp List</a></li>
             <li><a href="overtime.php"><i class="fa fa-circle-o"></i> Overtime</a></li>
-            <li><a href="cashadvance.php"><i class="fa fa-circle-o"></i> Other Deductions</a></li>
+            <li><a href="cashadvance.php"><i class="fa fa-circle-o"></i> Mandatory Deductions</a></li>
             <li><a href="schedule.php"><i class="fa fa-circle-o"></i> Schedules</a></li>
           </ul>
         </li>

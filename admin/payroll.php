@@ -71,7 +71,7 @@
                   <th>Employee ID</th>
                   <th>Gross</th>
                   <th>Deductions</th>
-                  <th>Other Deductions</th>
+                  <th>Mandatory Deductions</th>
                   <th>Net Pay</th>
                 </thead>
                 <tbody>

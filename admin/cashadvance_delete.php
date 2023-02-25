@@ -5,7 +5,7 @@
 		$id = $_POST['id'];
 		$sql = "DELETE FROM cashadvance WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Other Deductions deleted successfully';
+			$_SESSION['success'] = 'Mandatory Deductions deleted successfully';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
