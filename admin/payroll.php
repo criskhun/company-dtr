@@ -175,13 +175,13 @@ $(function(){
 
   $('#payroll').click(function(e){
     e.preventDefault();
-    $('#payForm').attr('action', 'payroll_generate.php');
+    $('#payForm').attr('action', 'payroll_generate.php','_blank');
     $('#payForm').submit();
   });
 
   $('#payslip').click(function(e){
     e.preventDefault();
-    $('#payForm').attr('action', 'payslip_generate.php');
+    $('#payForm').attr('action', 'payslip_generate.php','_blank');
     $('#payForm').submit();
   });
 
