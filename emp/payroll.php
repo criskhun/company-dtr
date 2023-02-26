@@ -59,7 +59,7 @@
                     </div>
                     <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range" value="<?php echo (isset($_GET['range'])) ? $_GET['range'] : $range_from.' - '.$range_to; ?>">
                   </div>
-                  <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-print"></span> Payroll</button>
+                  <!-- <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-print"></span> Payroll</button> -->
                   <button type="button" class="btn btn-primary btn-sm btn-flat" id="payslip"><span class="glyphicon glyphicon-print"></span> Payslip</button>
                 </form>
               </div>
@@ -76,7 +76,7 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT *, SUM(amount) as total_amount FROM deductions";
+                    $sql = "SELECT *, SUM(amount) as total_amount FROM deductions WHERE employee_id='$user_id'";
                     $query = $conn->query($sql);
                     $drow = $query->fetch_assoc();
                     $deduction = $drow['total_amount'];
@@ -92,14 +92,16 @@
                       $to = date('Y-m-d', strtotime($ex[1]));
                     }
 
-                    $sql = "SELECT *, SUM(num_hr) AS total_hr, attendance.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id WHERE date BETWEEN '$from' AND '$to' GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
+                    $sql = "SELECT *, SUM(num_hr) AS total_hr, attendance.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id WHERE attendance.employee_id = $user_id AND date BETWEEN '$from' AND '$to' GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
+
 
                     $query = $conn->query($sql);
                     $total = 0;
                     while($row = $query->fetch_assoc()){
                       $empid = $row['empid'];
                       
-                      $casql = "SELECT *, SUM(amount)+ SUM(sss)+ SUM(pagibig)+ SUM(philhealth) AS cashamount FROM cashadvance WHERE employee_id='$empid' AND date_advance BETWEEN '$from' AND '$to' group by amount,sss,pagibig,philhealth";
+                      $casql = "SELECT *, SUM(amount)+ SUM(sss)+ SUM(pagibig)+ SUM(philhealth) AS cashamount FROM cashadvance WHERE employee_id='$user_id' AND date_advance BETWEEN '$from' AND '$to' group by amount,sss,pagibig,philhealth";
+
                       
                       $caquery = $conn->query($casql);
                       $carow = $caquery->fetch_assoc();
