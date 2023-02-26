@@ -1,13 +1,7 @@
 <?php 
 include 'conn.php'; 
-$qbank = "select distinct bankname from bank";
-$dbank = mysqli_query($conn,$qbank);
-
 $qempid = "select distinct employee_id from employees";
 $dempid= mysqli_query($conn,$qempid);
-
-$qtype = "select distinct plantype from bank";
-$dtype = mysqli_query($conn,$qtype);
 ?>
 
 <!-- Add -->
@@ -29,7 +23,7 @@ $dtype = mysqli_query($conn,$qtype);
 						<?php while($row1 = mysqli_fetch_array($dempid)):;?>
 						<option value="<?php echo $row1[0]?>" selected><?php echo $row1[0]?></option>
 						<?php endwhile; ?>
-						<option value="" selected>- Select Agent ID -</option>
+						<option value="" selected>- Select Emp ID -</option>
                       </select>
                   	</div>
                 </div>
