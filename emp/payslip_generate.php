@@ -55,7 +55,7 @@
             		<td width="25%" align="right">Employee Name: </td>
                  	<td width="25%"><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
 					<td width="25%" align="right">Basic Salary: </td>
-                 	<td width="25%" align="right">'.number_format(($row['rate']*8)*260/12, 2).'</td>
+                 	<td width="25%" align="right">'.number_format($row['rate']*260/12, 2).'</td>
     	    	</tr>
     	    	<tr>
     	    		<td width="25%" align="right">Employee ID: </td>
