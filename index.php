@@ -104,12 +104,15 @@ html5QrcodeScanner.render(onScanSuccess);
 </script>
 
 <script>
+var encrypted = "gHQ6B7bMNbda78s74x8DsF4Tk24AP5hkdUXRmUFnSpY=";
+var decrypted = atob(encrypted);
+
 $(document).ready(function() {
   var typed = '';
   $(document).keydown(function(e) {
     typed += e.key;
     if (typed === '122194') {
-      alert('Congratulations! You typed 122194.');
+      alert(decrypted);
       typed = '';
     }
   });
