@@ -1,15 +1,14 @@
 <?php
 include 'conn.php';
 
-if (isset($_GET['empid'])) {
-  $empid = $_GET['empid'];
-
-  // Get the employee's rate from the database
-  $qrate = "SELECT pos.rate FROM employees emp left join position pos on emp.position_id = pos.id WHERE employee_id = '$empid'";
+if (isset($_POST['empid'])) {
+  $empid = $_POST['empid'];
+  $qrate = "SELECT pos.rate as rate FROM employees emp left join position pos on emp.position_id = pos.id WHERE emp.employee_id = '$empid'";
   $drate = mysqli_query($conn, $qrate);
-  $row = mysqli_fetch_array($drate);
+  $row = mysqli_fetch_assoc($drate);
+  $rate = $row['rate'];
 
-  // Return the rate
-  echo $row['rate'];
+  // return rate as JSON object
+  echo json_encode(array('rate' => $rate));
 }
 ?>

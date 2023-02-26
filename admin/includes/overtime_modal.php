@@ -21,11 +21,10 @@ $dempid= mysqli_query($conn,$qempid);
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 
 					  <div class="col-sm-9">
-						<select class="form-control" id="empid" name="empid" required>
+						<select class="form-control" id="empid" name="empid">
 						<?php while($row1 = mysqli_fetch_array($dempid)):;?>
-						<option value="<?php echo $row1[0]?>" selected><?php echo $row1[0]?></option>
-						<?php endwhile; ?>
-						<option value="" selected>- Select Emp ID -</option>
+						<option value="<?php echo $row1[0]?>"><?php echo $row1[0]?></option>
+						<option value="">- Select Emp ID -</option>
                       </select>
                   	</div>
                 </div>
@@ -150,17 +149,24 @@ $dempid= mysqli_query($conn,$qempid);
 
 <script>
 $(document).ready(function() {
-  // Listen for changes in the employee selection
+  // handle employee selection event
   $('#empid').on('change', function() {
-    var empid = $(this).val(); // Get the selected employee ID
-    // Send a request to get the employee's rate
-    $.get('get_rate.php', {empid: empid}, function(rate) {
-      // Set the rate field value to the received rate
-      $('#rate').val(rate);
-    });
+    var empid = $(this).val(); // get selected employee ID
+    if (empid != '') {
+      // make AJAX request to get rate for selected employee
+      $.ajax({
+        url: 'get_rate.php',
+        type: 'POST',
+        data: {empid: empid},
+        dataType: 'json',
+        success:function(response) {
+          // update rate field with returned value
+          $('#rate').val(response.rate);
+        }
+      });
+    } else {
+      $('#rate').val(''); // clear rate field if no employee is selected
+    }
   });
 });
 </script>
-
-
-     
