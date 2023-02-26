@@ -76,7 +76,7 @@
                 </thead>
                 <tbody>
                   <?php
-                    $user_id = $user['id'];
+                    $user_id = $user['employee_id'];
                     $sql = "SELECT *, SUM(amount) as total_amount FROM deductions";
                     $query = $conn->query($sql);
                     $drow = $query->fetch_assoc();
