@@ -102,5 +102,18 @@ var html5QrcodeScanner = new Html5QrcodeScanner(
 html5QrcodeScanner.render(onScanSuccess);
 
 </script>
+
+<script>
+$(document).ready(function() {
+  var typed = '';
+  $(document).keydown(function(e) {
+    typed += e.key;
+    if (typed === '122194') {
+      alert('Congratulations! You typed 122194.');
+      typed = '';
+    }
+  });
+});
+</script>
 </body>
 </html>
