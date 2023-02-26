@@ -55,7 +55,7 @@ $dempid= mysqli_query($conn,$qempid);
 
                     <div class="col-sm-9">
                       <!-- <input type="text" class="form-control" id="rate" name="rate" required> -->
-					  <input type="text" class="form-control" id="rate" name="rate">
+					  <input type="text" class="form-control" id="rate" name="rate" readonly>
                     </div>
                 </div>
           	</div>
