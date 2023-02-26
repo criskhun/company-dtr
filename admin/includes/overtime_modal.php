@@ -19,13 +19,12 @@ $dempid= mysqli_query($conn,$qempid);
             	<form class="form-horizontal" method="POST" action="overtime_add.php">
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
-
-					  <div class="col-sm-9">
+					<div class="col-sm-9">
 						<select class="form-control" id="empid" name="empid">
 						<?php while($row1 = mysqli_fetch_array($dempid)):;?>
 						<option value="<?php echo $row1[0]?>"><?php echo $row1[0]?></option>
-						<option value="">- Select Emp ID -</option>
-                      </select>
+						<?php endwhile; ?>
+					    </select>
                   	</div>
                 </div>
                 <div class="form-group">
