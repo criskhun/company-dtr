@@ -56,7 +56,8 @@ $dempid= mysqli_query($conn,$qempid);
                     <label for="rate" class="col-sm-3 control-label">Rate</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="rate" name="rate" required>
+                      <!-- <input type="text" class="form-control" id="rate" name="rate" required> -->
+					  <input type="text" class="form-control" id="rate" name="rate" required data-empid="">
                     </div>
                 </div>
           	</div>
@@ -108,7 +109,7 @@ $dempid= mysqli_query($conn,$qempid);
                     <label for="rate_edit" class="col-sm-3 control-label">Rate</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="rate_edit" name="rate" required>
+                      <input type="text" class="form-control" id="rate_edit" name="rate" required data-empid="">
                     </div>
                 </div>
           	</div>
@@ -147,5 +148,38 @@ $dempid= mysqli_query($conn,$qempid);
     </div>
 </div>
 
+<script>
+$(function() {
+    // Get the rate input element
+    var rateInput = $('#rate');
+
+    // When the employee select changes, update the rate
+    $('#empid').on('change', function() {
+        var empid = $(this).val();
+
+        // Make an AJAX request to retrieve the rate for the selected employee
+        $.ajax({
+            url: 'get_employee_rate.php',
+            data: { empid: empid },
+            type: 'GET',
+            success: function(data) {
+                // Update the rate input field with the retrieved rate
+                rateInput.val(data.rate);
+                rateInput.attr('data-empid', empid);
+            }
+        });
+    });
+
+    // When the user submits the form, make sure the rate input field has a valid value
+    $('form').on('submit', function() {
+        var empid = $('#empid').val();
+
+        if (rateInput.attr('data-empid') !== empid) {
+            alert('Please select an employee before submitting the form.');
+            return false;
+        }
+    });
+});
+</script>
 
      
