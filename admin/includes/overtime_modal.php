@@ -3,18 +3,6 @@ include 'conn.php';
 
 $qempid = "select distinct employee_id from employees";
 $dempid= mysqli_query($conn,$qempid);
-
-if (isset($_GET['empid'])) {
-	$empid = $_GET['empid'];
-  
-	// Get the employee's rate from the database
-	$qrate = "SELECT rate FROM employees WHERE employee_id = '$empid'";
-	$drate = mysqli_query($conn, $qrate);
-	$row = mysqli_fetch_array($drate);
-  
-	// Return the rate
-	echo $row['rate'];
-  }
 ?>
 
 <!-- Add -->
@@ -165,7 +153,7 @@ $(document).ready(function() {
   $('#empid').on('change', function() {
     var empid = $(this).val(); // Get the selected employee ID
     // Send a request to get the employee's rate
-    $.get('get_rate.php', {empid: empid}, function(rate) {
+    $.get('get_employee_rate.php', {empid: empid}, function(rate) {
       // Set the rate field value to the received rate
       $('#rate').val(rate);
     });
