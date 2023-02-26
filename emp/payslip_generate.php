@@ -43,7 +43,7 @@
       	$carow = $caquery->fetch_assoc();
       	$cashadvance = $carow['cashamount'];
 
-		$gross = ($row['rate'] * $row['total_hr'])*260/12;
+		$gross = ($row['rate'] * $row['total_hr']);
 		$total_deduction = $deduction + $cashadvance;
   		$net = $gross - $total_deduction;
 
@@ -67,7 +67,7 @@
     	    		<td></td> 
     	    		<td></td>
 				 	<td width="25%" align="right"><b>Gross Pay: </b></td>
-				 	<td width="25%" align="right"><b>'.number_format(($row['rate']*$row['total_hr']*260/12), 2).'</b></td> 
+				 	<td width="25%" align="right"><b>'.number_format(($row['rate']*$row['total_hr']), 2).'</b></td> 
     	    	</tr>
     	    	<tr> 
     	    		<td></td> 
