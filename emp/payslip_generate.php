@@ -45,6 +45,7 @@
 
 		$gross = ($row['rate'] * $row['total_hr']);
 		$total_deduction = $deduction + $cashadvance;
+		$basicdailyrate = (($row['rate']*8)*22)*12/260;
   		$net = $gross - $total_deduction;
 
 		$contents .= '
@@ -55,7 +56,7 @@
             		<td width="25%" align="right">Employee Name: </td>
                  	<td width="25%"><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
 					<td width="25%" align="right">Basic Salary: </td>
-                 	<td width="25%" align="right">'.number_format((($row['rate']*8)*22)*12/260, 2).'</td>
+                 	<td width="25%" align="right">'.number_format($basicdailyrate*30, 2).'</td>
     	    	</tr>
     	    	<tr>
     	    		<td width="25%" align="right">Employee ID: </td>
