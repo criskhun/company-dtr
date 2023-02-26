@@ -48,7 +48,7 @@
   		$net = $gross - $total_deduction;
 
 		$contents .= '
-			<h2 align="center">EZD Payroll Systems</h2>
+			<h2 align="center">GNET Group of Companies</h2>
 			<h4 align="center">'.$from_title." - ".$to_title.'</h4>
 			<table cellspacing="0" cellpadding="3">  
     	       	<tr>  
@@ -56,6 +56,8 @@
                  	<td width="25%"><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
 				 	<td width="25%" align="right">Rate per Hour: </td>
                  	<td width="25%" align="right">'.number_format($row['rate'], 2).'</td>
+					<td width="25%" align="right">Basic Salary: </td>
+                 	<td width="25%" align="right">'.number_format(($row['rate']*8)*22, 2).'</td>
     	    	</tr>
     	    	<tr>
     	    		<td width="25%" align="right">Employee ID: </td>
