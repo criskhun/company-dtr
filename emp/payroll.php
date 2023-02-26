@@ -68,7 +68,6 @@
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th>Employee Name</th>
-                  <th>Employee ID</th>
                   <th>Gross</th>
                   <th>Deductions</th>
                   <th>Mandatory Deductions</th>
