@@ -68,6 +68,7 @@
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th>Employee Name</th>
+                  <th>Employee ID</th>
                   <th>Gross</th>
                   <th>Deductions</th>
                   <th>Mandatory Deductions</th>
@@ -119,7 +120,7 @@
                       echo "
                         <tr>
                           <td>".$row['lastname'].", ".$row['firstname']."</td>
-                          <td>".$row['employee_id']."</td>
+                          <td>".$user_id."</td>
                           <td>".number_format($gross, 2)."</td>
                           <td>".number_format($deduction, 2)."</td>
                           <td>".number_format($total_deduction, 2)."</td>
