@@ -150,28 +150,16 @@ $dempid= mysqli_query($conn,$qempid);
 
 <script>
 $(document).ready(function() {
-  $('#employee_id').on('change', function() {
-    var employee_id = $(this).val();
-    if(employee_id) {
-      $.ajax({
-        url: 'get_employee_rate.php',
-        type: 'POST',
-        data: {employee_id: employee_id},
-        dataType: 'json',
-        success: function(response) {
-          if(response) {
-            $('#rate').val(response.rate);
-          } else {
-            $('#rate').val('');
-          }
-        }
-      });
-    } else {
-      $('#rate').val('');
-    }
+  // Listen for changes in the employee selection
+  $('#empid').on('change', function() {
+    var empid = $(this).val(); // Get the selected employee ID
+    // Send a request to get the employee's rate
+    $.get('get_rate.php', {empid: empid}, function(rate) {
+      // Set the rate field value to the received rate
+      $('#rate').val(rate);
+    });
   });
 });
-
 </script>
 
 
