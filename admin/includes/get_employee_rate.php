@@ -2,15 +2,14 @@
 include 'conn.php';
 
 if (isset($_GET['empid'])) {
-    $empid = $_GET['empid'];
+  $empid = $_GET['empid'];
 
-    // Get the rate for the selected employee
-    $query = "SELECT rate FROM employees WHERE employee_id = $empid";
-    $result = mysqli_query($conn, $query);
-    $row = mysqli_fetch_assoc($result);
+  // Get the employee's rate from the database
+  $qrate = "SELECT rate FROM employees WHERE employee_id = '$empid'";
+  $drate = mysqli_query($conn, $qrate);
+  $row = mysqli_fetch_array($drate);
 
-    // Return the rate as JSON
-    header('Content-Type: application/json');
-    echo json_encode($row);
+  // Return the rate
+  echo $row['rate'];
 }
 ?>
