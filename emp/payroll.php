@@ -120,7 +120,7 @@
                       echo "
                         <tr>
                           <td>".$row['lastname'].", ".$row['firstname']."</td>
-                          <td>".$user_id."</td>
+                          <td>".$empid."</td>
                           <td>".number_format($gross, 2)."</td>
                           <td>".number_format($deduction, 2)."</td>
                           <td>".number_format($total_deduction, 2)."</td>
