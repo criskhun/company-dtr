@@ -76,6 +76,7 @@
                 </thead>
                 <tbody>
                   <?php
+                    $user_id = $user['id'];
                     $sql = "SELECT *, SUM(amount) as total_amount FROM deductions";
                     $query = $conn->query($sql);
                     $drow = $query->fetch_assoc();
@@ -92,7 +93,7 @@
                       $to = date('Y-m-d', strtotime($ex[1]));
                     }
 
-                    $sql = "SELECT *, SUM(num_hr) AS total_hr,  SUM(sales.amount) AS totalsales, attendance.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND employees.id = '$empid'";
+                    $sql = "SELECT *, SUM(num_hr) AS total_hr,  SUM(sales.amount) AS totalsales, attendance.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND employees.id = '$user_id'";
 
                     $query = $conn->query($sql);
                     $total = 0;
