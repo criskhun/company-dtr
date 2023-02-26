@@ -150,7 +150,7 @@ $dempid= mysqli_query($conn,$qempid);
 $(document).ready(function(){
   $('#empid').change(function(){
     var empid = $(this).val();
-    $.get('/includes/get_rate.php?empid='+empid, function(data){
+    $.get('includes/get_rate.php?empid='+empid, function(data){
       $('#rate').val(data);
     });
   });
