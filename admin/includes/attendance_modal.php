@@ -1,3 +1,15 @@
+<?php 
+include 'conn.php'; 
+$qbank = "select distinct bankname from bank";
+$dbank = mysqli_query($conn,$qbank);
+
+$qempid = "select distinct employee_id from employees";
+$dempid= mysqli_query($conn,$qempid);
+
+$qtype = "select distinct plantype from bank";
+$dtype = mysqli_query($conn,$qtype);
+?>
+
 <!-- Add -->
 <div class="modal fade" id="addnew">
     <div class="modal-dialog">
@@ -13,7 +25,12 @@
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="employee" name="employee" required>
+						<select class="form-control" id="empid" name="empid" required>
+						<?php while($row1 = mysqli_fetch_array($dempid)):;?>
+						<option value="<?php echo $row1[0]?>" selected><?php echo $row1[0]?></option>
+						<?php endwhile; ?>
+						<option value="" selected>- Select Agent ID -</option>
+                      </select>
                   	</div>
                 </div>
                 <div class="form-group">
