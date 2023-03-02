@@ -71,7 +71,7 @@
                   <th>Employee ID</th>
                   <th>Gross</th>
                   <th>Deductions</th>
-                  <th>Other Deductions</th>
+                  <th>Mandatory Deductions</th>
                   <th>Net Pay</th>
                 </thead>
                 <tbody>
@@ -164,24 +164,28 @@ $(function(){
   $('#wpayroll').click(function(e){
     e.preventDefault();
     $('#payForm').attr('action', 'payroll_generate_weekly.php');
+    $('#payForm').attr('target', '_blank'); // add target attribute
     $('#payForm').submit();
   });
 
   $('#apayroll').click(function(e){
     e.preventDefault();
     $('#payForm').attr('action', 'payroll_generate_all.php');
+    $('#payForm').attr('target', '_blank'); // add target attribute
     $('#payForm').submit();
   });
 
   $('#payroll').click(function(e){
     e.preventDefault();
     $('#payForm').attr('action', 'payroll_generate.php');
+    $('#payForm').attr('target', '_blank'); // add target attribute
     $('#payForm').submit();
   });
 
   $('#payslip').click(function(e){
     e.preventDefault();
     $('#payForm').attr('action', 'payslip_generate.php');
+    $('#payForm').attr('target', '_blank'); // add target attribute
     $('#payForm').submit();
   });
 

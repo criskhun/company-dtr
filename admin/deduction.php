@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Deductions
+       Other Deductions
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Deductions</li>
+        <li class="active">Other Deductions</li>
       </ol>
     </section>
     <!-- Main content -->

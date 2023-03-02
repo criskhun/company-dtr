@@ -1,3 +1,15 @@
+<?php 
+include 'conn.php'; 
+$qbank = "select distinct bankname from bank";
+$dbank = mysqli_query($conn,$qbank);
+
+$qempid = "select distinct employee_id from employees";
+$dempid= mysqli_query($conn,$qempid);
+
+$qtype = "select distinct plantype from bank";
+$dtype = mysqli_query($conn,$qtype);
+?>
+
 <!-- Add -->
 <div class="modal fade" id="addnew">
     <div class="modal-dialog">

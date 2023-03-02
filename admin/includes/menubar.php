@@ -29,17 +29,17 @@
           <ul class="treeview-menu">
             <li><a href="employee.php"><i class="fa fa-circle-o"></i> Emp List</a></li>
             <li><a href="overtime.php"><i class="fa fa-circle-o"></i> Overtime</a></li>
-            <li><a href="cashadvance.php"><i class="fa fa-circle-o"></i> Other Deductions</a></li>
+            <li><a href="cashadvance.php"><i class="fa fa-circle-o"></i> Mandatory Deductions</a></li>
             <li><a href="schedule.php"><i class="fa fa-circle-o"></i> Schedules</a></li>
           </ul>
         </li>
-        <li><a href="sales.php"><i class="fa fa-dollar"></i> <span>Sales</span></a></li>
-        <li><a href="bank.php"><i class="fa fa-bank"></i> <span>Maintain Bank</span></a></li>
-        <li><a href="deduction.php"><i class="fa fa-file-text"></i> <span>Deductions</span></a></li>
-        <li><a href="position.php"><i class="fa fa-suitcase"></i> <span>Agent Roles</span></a></li>
+        <!-- <li><a href="sales.php"><i class="fa fa-dollar"></i> <span>Sales</span></a></li> -->
+        <!-- <li><a href="bank.php"><i class="fa fa-bank"></i> <span>Maintain Bank</span></a></li> -->
+        <li><a href="deduction.php"><i class="fa fa-file-text"></i> <span> Other Deductions</span></a></li>
+        <li><a href="position.php"><i class="fa fa-suitcase"></i> <span>Employee Roles</span></a></li>
         <li class="header">PRINTABLES</li>
-        <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Payroll Monthly</span></a></li>
-        <li><a href="payroll_weekly.php"><i class="fa fa-files-o"></i> <span>Payroll Weekly</span></a></li>
+        <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Payroll</span></a></li>
+        <!-- <li><a href="payroll_weekly.php"><i class="fa fa-files-o"></i> <span>Payroll Weekly</span></a></li> -->
         <li><a href="schedule_employee.php"><i class="fa fa-clock-o"></i> <span>Schedule</span></a></li>
       </ul>
     </section>

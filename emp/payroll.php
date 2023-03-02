@@ -59,8 +59,8 @@
                     </div>
                     <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range" value="<?php echo (isset($_GET['range'])) ? $_GET['range'] : $range_from.' - '.$range_to; ?>">
                   </div>
-                  <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-print"></span> Payroll</button>
-                  <button type="button" class="btn btn-primary btn-sm btn-flat" id="payslip"><span class="glyphicon glyphicon-print"></span> Payslip</button>
+                  <!-- <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-print"></span> Admin Payroll</button> -->
+                  <button type="button" class="btn btn-primary btn-sm btn-flat" id="payslip"><span class="glyphicon glyphicon-print"></span> Generate Payslip</button>
                 </form>
               </div>
             </div>
@@ -71,11 +71,12 @@
                   <th>Employee ID</th>
                   <th>Gross</th>
                   <th>Deductions</th>
-                  <th>Other Deductions</th>
+                  <th>Mandatory Deductions</th>
                   <th>Net Pay</th>
                 </thead>
                 <tbody>
                   <?php
+                    $user_id = $user['id'];
                     $sql = "SELECT *, SUM(amount) as total_amount FROM deductions";
                     $query = $conn->query($sql);
                     $drow = $query->fetch_assoc();
@@ -92,7 +93,8 @@
                       $to = date('Y-m-d', strtotime($ex[1]));
                     }
 
-                    $sql = "SELECT *, SUM(num_hr) AS total_hr, attendance.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id WHERE date BETWEEN '$from' AND '$to' GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
+                    $sql = "SELECT *, SUM(num_hr) AS total_hr,  SUM(sales.amount) AS totalsales, employees.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE attendance.employee_id = '$user_id' AND date BETWEEN '$from' AND '$to' GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
+
 
                     $query = $conn->query($sql);
                     $total = 0;
@@ -101,21 +103,27 @@
                       
                       $casql = "SELECT *, SUM(amount)+ SUM(sss)+ SUM(pagibig)+ SUM(philhealth) AS cashamount FROM cashadvance WHERE employee_id='$empid' AND date_advance BETWEEN '$from' AND '$to' group by amount,sss,pagibig,philhealth";
                       
+                      $salesdeduct = "SELECT sa.*, SUM(sa.approvededuction) AS aprdeduc FROM sales sa LEFT JOIN employees es ON es.employee_id = sa.employee_id WHERE es.id='$empid' and status = 'Approved' AND sa.salesdate BETWEEN '$from' AND '$to' group by approvededuction";
+
                       $caquery = $conn->query($casql);
                       $carow = $caquery->fetch_assoc();
                       $cashadvance = $carow['cashamount'];
 
-                      $gross = $row['rate'] * $row['total_hr'];
-                      $total_deduction = $deduction + $cashadvance;
+                      $saquery = $conn->query($salesdeduct); 
+                      $sarow = $saquery->fetch_assoc();
+                      $salesaprdeduc = $sarow['aprdeduc'];
+
+                      $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
+                      $total_deduction = $deduction + $cashadvance + $salesaprdeduc;
                       $net = $gross - $total_deduction;
 
                       echo "
                         <tr>
                           <td>".$row['lastname'].", ".$row['firstname']."</td>
-                          <td>".$row['employee_id']."</td>
+                          <td>".$empid."</td>
                           <td>".number_format($gross, 2)."</td>
                           <td>".number_format($deduction, 2)."</td>
-                          <td>".number_format($cashadvance, 2)."</td>
+                          <td>".number_format($total_deduction, 2)."</td>
                           <td>".number_format($net, 2)."</td>
                         </tr>
                       ";
@@ -154,16 +162,32 @@ $(function(){
     var range = encodeURI($(this).val());
     window.location = 'payroll.php?range='+range;
   });
+ 
+  $('#wpayroll').click(function(e){
+    e.preventDefault();
+    $('#payForm').attr('action', 'payroll_generate_weekly.php');
+    $('#payForm').attr('target', '_blank'); // add target attribute
+    $('#payForm').submit();
+  });
+
+  $('#apayroll').click(function(e){
+    e.preventDefault();
+    $('#payForm').attr('action', 'payroll_generate_all.php');
+    $('#payForm').attr('target', '_blank'); // add target attribute
+    $('#payForm').submit();
+  });
 
   $('#payroll').click(function(e){
     e.preventDefault();
     $('#payForm').attr('action', 'payroll_generate.php');
+    $('#payForm').attr('target', '_blank'); // add target attribute
     $('#payForm').submit();
   });
 
   $('#payslip').click(function(e){
     e.preventDefault();
     $('#payForm').attr('action', 'payslip_generate.php');
+    $('#payForm').attr('target', '_blank'); // add target attribute
     $('#payForm').submit();
   });
 

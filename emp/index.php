@@ -33,7 +33,7 @@
     	</form>
   	</div>
 	  <!-- button  onclick="window.location.href='/apsystem/'" class="btn btn-primary btn-block btn-flat"><i class="fa fa-user-o"></i>&nbsp;   Time Stamp Sign In</button -->
-    <button  onclick="window.location.href='/apsystem/admin'" class="btn btn-primary btn-block btn-flat"><i class="fa fa-user-o"></i>&nbsp;   Admin Sign In</button>
+    <button  onclick="window.location.href='/admin/'" class="btn btn-primary btn-block btn-flat"><i class="fa fa-user-o"></i>&nbsp;   Admin Sign In</button>
   	<?php
   		if(isset($_SESSION['error'])){
   			echo "

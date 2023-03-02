@@ -18,7 +18,7 @@
 			$employee_id = $row['id'];
 			$sql = "INSERT INTO cashadvance (employee_id, date_advance, amount, sss, pagibig, philhealth) VALUES ('$employee_id', NOW(), '$amount', '$sss', '$pagibig', '$philhealth')";
 			if($conn->query($sql)){
-				$_SESSION['success'] = 'Other Deductions added successfully';
+				$_SESSION['success'] = 'Mandatory Deductions added successfully';
 			}
 			else{
 				$_SESSION['error'] = $conn->error;

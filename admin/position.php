@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Agent Roles
+        Employee Roles
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Agent Roles</li>
+        <li class="active">Employee Roles</li>
       </ol>
     </section>
     <!-- Main content -->

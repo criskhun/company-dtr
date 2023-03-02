@@ -1,3 +1,11 @@
+<?php 
+include 'conn.php'; 
+
+$qempid = "select distinct employee_id from employees";
+$dempid= mysqli_query($conn,$qempid);
+
+?>
+
 <!-- Add -->
 <div class="modal fade" id="addnew">
     <div class="modal-dialog">
@@ -11,9 +19,12 @@
             	<form class="form-horizontal" method="POST" action="overtime_add.php">
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="employee" name="employee" required>
+					<div class="col-sm-9">
+						<select class="form-control" id="empid" name="empid">
+						<?php while($row1 = mysqli_fetch_array($dempid)):;?>
+						<option value="<?php echo $row1[0]?>"><?php echo $row1[0]?></option>
+						<?php endwhile; ?>
+					    </select>
                   	</div>
                 </div>
                 <div class="form-group">
@@ -43,7 +54,8 @@
                     <label for="rate" class="col-sm-3 control-label">Rate</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="rate" name="rate" required>
+                      <!-- <input type="text" class="form-control" id="rate" name="rate" required> -->
+					  <input type="text" class="form-control" id="rate" name="rate" readonly>
                     </div>
                 </div>
           	</div>
@@ -95,7 +107,7 @@
                     <label for="rate_edit" class="col-sm-3 control-label">Rate</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="rate_edit" name="rate" required>
+                      <input type="text" class="form-control" id="rate_edit" name="rate">
                     </div>
                 </div>
           	</div>
@@ -133,6 +145,14 @@
         </div>
     </div>
 </div>
-
-
-     
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('#empid').change(function(){
+    var empid = $(this).val();
+    $.get('includes/get_rate.php?empid='+empid, function(data){
+      $('#rate').val(data);
+    });
+  });
+});
+</script>

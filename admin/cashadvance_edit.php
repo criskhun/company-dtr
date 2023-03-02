@@ -7,7 +7,7 @@
 		
 		$sql = "UPDATE cashadvance SET amount = '$amount' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Other Deductions updated successfully';
+			$_SESSION['success'] = 'Mandatory Deductions updated successfully';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
