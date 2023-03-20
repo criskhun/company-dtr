@@ -20,22 +20,15 @@ $dempid= mysqli_query($conn,$qempid);
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 
 					  <div class="col-sm-9">
-    <select class="form-control" id="empid" name="empid" required>
-        <option value="" selected disabled>- Select Employee Name4 -</option>
-        <?php while($row1 = mysqli_fetch_array($dempid)):;?>
-            <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
-        <?php endwhile; ?>
-    </select>
-</div>
-
-
-
-
-
-
-
-
-                </div>
+                            <select class="form-control" id="empid" name="empid" required>
+                                <option value="" selected disabled>- Select Employee Name -</option>
+                                <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+                                <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                    </div>
+					
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Date</label>
 
