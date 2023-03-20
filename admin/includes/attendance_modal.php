@@ -21,7 +21,7 @@ $dempid= mysqli_query($conn,$qempid);
 
 					  <div class="col-sm-9">
     <select class="form-control" id="empid" name="empid" required>
-        <option value="" selected disabled>- Select Employee Name -</option>
+        <option value="" selected disabled>- Select Employee Name3 -</option>
         <?php while($row1 = mysqli_fetch_array($dempid)):;?>
             <option value="<?php echo $row1['employee_id'];?>" data-name="<?php echo $row1['firstname'].' '.$row1['lastname'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
         <?php endwhile; ?>
@@ -146,6 +146,7 @@ $dempid= mysqli_query($conn,$qempid);
         </div>
     </div>
 </div>
+
 
 <script>
     // Get the combo box element
