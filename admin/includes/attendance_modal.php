@@ -21,9 +21,9 @@ $dempid= mysqli_query($conn,$qempid);
 
 					  <div class="col-sm-9">
   <select class="form-control" id="empid" name="empid" required>
-    <option value="" selected>- Select Employee Namee -</option>
+    <option value="" selected>- Select Employee Names -</option>
     <?php while($row1 = mysqli_fetch_array($dempid)):;?>
-      <option value="<?php echo $row1[0]?>"><?php echo $row1[1] . " " . $row1[2]?></option>
+      <option value="<?php echo $row1['employee_id']?>"><?php echo $row1['firstname'] . " " . $row1['lastname']?></option>
     <?php endwhile; ?>
   </select>
 </div>
@@ -151,5 +151,8 @@ $dempid= mysqli_query($conn,$qempid);
 
     // Set the value attribute of the select element to the value of the selected option
     this.setAttribute('value', selectedOption.value);
+
+    // Set the employee name as the text content of the selected option
+    document.getElementById("empname").textContent = selectedOption.textContent;
   });
 </script>
