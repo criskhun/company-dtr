@@ -4,7 +4,8 @@
 
 <div class="login-box">
   	<div class="login-logo">
-      <p><i class="fa fa-address-card"></i>&nbsp;  Company </p>
+      <p> Welcome to</p>
+      <p> GNET Group of Companies</p>
   		<p id="date"></p>
       <p id="time" class="bold"></p>  
   	</div>

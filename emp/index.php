@@ -8,8 +8,8 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   	<div class="login-logo">
-  		<b>Employee Login</b>
-		<p><i class="fa fa-address-card"></i>&nbsp;  EZD Marketing</p>
+  		<b>Employee  Login</b>
+		<p><i class="fa fa-address-card"></i>&nbsp;  GNET Group of Companies</p>
   	</div>
   
   	<div class="login-box-body">

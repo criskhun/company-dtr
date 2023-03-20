@@ -9,7 +9,7 @@
 <div class="login-box">
   	<div class="login-logo">
   		<b>Admin Login</b>
-		<p><i class="fa fa-address-card"></i>&nbsp;  EZD Marketing</p>
+		<p><i class="fa fa-address-card"></i>&nbsp;  GNET Group of Companies</p>
   	</div>
   
   	<div class="login-box-body">
@@ -33,7 +33,7 @@
     	</form>
   	</div>
 	  <!--button  onclick="window.location.href='/apsystem/'" class="btn btn-primary btn-block btn-flat"><i class="fa fa-user-o"></i>&nbsp;   Time Stamp Sign In</button-->
-    <button  onclick="window.location.href='/emp/'" class="btn btn-primary btn-block btn-flat"><i class="fa fa-user-o"></i>&nbsp;   Employee Sign In</button>
+    <button  onclick="window.location.href='/emp/'" class="btn btn-primary btn-block btn-flat"><i class="fa fa-user-o"></i>&nbsp;   Employee Login</button>
   	<?php
   		if(isset($_SESSION['error'])){
   			echo "
