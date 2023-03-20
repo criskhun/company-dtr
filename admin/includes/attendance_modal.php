@@ -146,7 +146,10 @@ $dempid= mysqli_query($conn,$qempid);
 
   // Listen for the change event
   empSelect.addEventListener("change", function() {
-    // Set the selected employee ID as the value of the select element
-    this.value = this.options[this.selectedIndex].parentNode.getAttribute('value');
+    // Get the selected option
+    var selectedOption = this.options[this.selectedIndex];
+
+    // Set the value attribute of the select element to the value of the selected option
+    this.setAttribute('value', selectedOption.value);
   });
 </script>
