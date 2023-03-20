@@ -1,6 +1,7 @@
 <?php 
 include 'conn.php'; 
-$qempid = "select distinct employee_id from employees";
+// $qempid = "select distinct employee_id from employees";
+$qempid = "select distinct employee_id, employee_name from employees";
 $dempid= mysqli_query($conn,$qempid);
 ?>
 
@@ -18,14 +19,18 @@ $dempid= mysqli_query($conn,$qempid);
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 
-                  	<div class="col-sm-9">
-						<select class="form-control" id="empid" name="empid" required>
-						<?php while($row1 = mysqli_fetch_array($dempid)):;?>
-						<option value="<?php echo $row1[0]?>" selected><?php echo $row1[0]?></option>
-						<?php endwhile; ?>
-						<option value="" selected>- Select Emp ID -</option>
-                      </select>
-                  	</div>
+					  <div class="col-sm-9">
+    <select class="form-control" id="empid" name="empid" required>
+        <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+            <option value="<?php echo $row1['employee_id']?>" selected>
+                <?php echo $row1['employee_id'] . ' - ' . $row1['employee_name']?>
+            </option>
+        <?php endwhile; ?>
+        <option value="" selected>- Select Employee Name -</option>
+    </select>
+</div>
+
+
                 </div>
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Date</label>
