@@ -23,10 +23,11 @@ $dempid= mysqli_query($conn,$qempid);
 	<select class="form-control" id="empid" name="empid" required>
 		<option value="" selected>- Select Employee Name -</option>
 		<?php while($row1 = mysqli_fetch_array($dempid)):;?>
-			<option value="<?php echo $row1[0]?>" selected><?php echo $row1[1].' '.$row1[2]?></option>
+			<option value="<?php echo $row1[0]?>"><?php echo $row1[1].' '.$row1[2]?></option>
 		<?php endwhile; ?>
 	</select>
 </div>
+
 
 
 
