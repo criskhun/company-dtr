@@ -30,12 +30,7 @@ $dempid= mysqli_query($conn,$qempid);
   </form>
 </div>
 
-<?php
-if(isset($_POST['empid'])) {
-  $empid = $_POST['empid'];
-  // Perform actions with the selected employee ID
-}
-?>
+
                     </div>
 
                 <div class="form-group">
@@ -149,19 +144,9 @@ if(isset($_POST['empid'])) {
         </div>
     </div>
 </div>
-<script>
-  // Get the select element
-  var empSelect = document.getElementById("empid");
-
-  // Listen for the change event
-  empSelect.addEventListener("change", function() {
-    // Get the selected option
-    var selectedOption = this.options[this.selectedIndex];
-
-    // Set the value attribute of the select element to the value of the selected option
-    this.setAttribute('value', selectedOption.value);
-
-    // Set the employee name as the text content of the selected option
-    document.getElementById("empname").textContent = selectedOption.textContent;
-  });
-</script>
+<?php
+if(isset($_POST['empid'])) {
+  $empid = $_POST['empid'];
+  // Perform actions with the selected employee ID
+}
+?>
