@@ -21,7 +21,7 @@ $dempid= mysqli_query($conn,$qempid);
 
 					  <div class="col-sm-9">
     <select class="form-control" id="empid" name="empid" required>
-        <option value="" selected disabled>- Select Employee Name1 -</option>
+        <option value="" selected disabled>- Select Employee Name -</option>
         <?php while($row1 = mysqli_fetch_array($dempid)):;?>
             <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
         <?php endwhile; ?>
@@ -147,5 +147,15 @@ $dempid= mysqli_query($conn,$qempid);
     </div>
 </div>
 
-
+<script>
+    // Get the combo box element
+    var empid = document.getElementById('empid');
+    
+    // Set the value of the combo box to the selected employee ID
+    empid.addEventListener('change', function() {
+        var selectedName = empid.options[empid.selectedIndex].text;
+        var selectedId = empid.options[empid.selectedIndex].value;
+        empid.value = selectedId;
+    });
+</script>
      
