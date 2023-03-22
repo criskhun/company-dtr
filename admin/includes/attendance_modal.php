@@ -144,9 +144,3 @@ $dempid= mysqli_query($conn,$qempid);
         </div>
     </div>
 </div>
-<?php
-if(isset($_POST['empid'])) {
-  $empid = $_POST['empid'];
-  // Perform actions with the selected employee ID
-}
-?>
