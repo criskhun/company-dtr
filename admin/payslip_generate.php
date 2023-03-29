@@ -69,6 +69,18 @@
 				<td width="25%" align="right">TAX Status: </td>
 				<td>S</td> 
 			</tr>
+			<tr>
+				<td width="25%" align="right">SSS No.:</td>
+				<td>nnn-nnnn-nnnnn</td>
+				<td width="25%" align="right">PHILHEALTH No.: </td>
+				<td>nnn-nnnn-nnnnn</td> 
+			</tr>
+			<tr>
+				<td width="25%" align="right">PAG-IBIG No.:</td>
+				<td>nnn-nnnn-nnnnn</td>
+				<td width="25%" align="right">TIN No.: </td>
+				<td>nnn-nnnn-nnnnn</td> 
+			</tr>
 
 
 
