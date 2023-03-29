@@ -19,17 +19,34 @@ $dempid= mysqli_query($conn,$qempid);
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 
+<<<<<<< HEAD
 					  <select class="form-control" id="empid" name="empid" required>
 		<option value="" selected>- Select Employee Name -</option>
 		<?php while($row1 = mysqli_fetch_array($dempid)):;?>
 			<option value="<?php echo $row1[0]?>" selected><?php echo $row1[1].' '.$row1[2]?></option>
 		<?php endwhile; ?>
 	</select>
+=======
+					  <div class="col-sm-9">
+    <select class="form-control" id="empid" name="empid" required>
+        <option value="" selected disabled>- Select Employee Name NEW -</option>
+        <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+            <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+        <?php endwhile; ?>
+    </select>
+>>>>>>> parent of f576aaf (Update attendance_modal.php)
 </div>
 
 
                     </div>
 
+<<<<<<< HEAD
+=======
+
+
+
+                </div>
+>>>>>>> parent of f576aaf (Update attendance_modal.php)
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Date</label>
 
