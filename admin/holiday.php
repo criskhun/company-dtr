@@ -56,6 +56,7 @@
                   <th>Holiday Type</th>
                   <th>No_Hours</th>
                   <th>Amount</th>
+                  <th>Tools</th>
                 </thead>
                 <tbody>
                   <?php
