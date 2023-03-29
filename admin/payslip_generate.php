@@ -89,18 +89,16 @@
 				<td width="25%" align="right">Holiday Pay: </td>
 				<td>nnnnn</td>
 			</tr>
+			<tr>
+				<td width="25%" align="right">Total Hours: </td>
+				<td align="right">'.number_format($row['total_hr'], 2).'</td>
+			</tr>
 
 
 
 
 
 
-    	    	<tr>
-    	    		<td width="25%" align="right">Employee ID: </td>
-				 	<td width="25%">'.$row['employee'].'</td>   
-				 	<td width="25%" align="right">Total Hours: </td>
-				 	<td width="25%" align="right">'.number_format($row['total_hr'], 2).'</td> 
-    	    	</tr>
 				<tr>
 				<td width="25%" align="right">Overtime: </td>
 				<td width="25%">'.$row['employee'].'</td>   
