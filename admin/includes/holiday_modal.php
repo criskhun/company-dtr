@@ -27,6 +27,18 @@ $dempid= mysqli_query($conn,$qempid);
     </select>
 </div>
                 </div>
+
+				<div class="form-group">
+    <label for="holiday-type" class="col-sm-3 control-label">Holiday Type</label>
+    <div class="col-sm-9">
+        <select class="form-control" id="holiday-type" name="holiday-type" required>
+            <option value="" selected disabled>- Select Holiday Type -</option>
+            <option value="regular">Regular Holiday</option>
+            <option value="special">Special Holiday</option>
+        </select>
+    </div>
+</div>
+
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Date</label>
 
