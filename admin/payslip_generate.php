@@ -161,8 +161,10 @@
 
     	    </table>
     	    <br>
-			$pdf->AddPage();
-		';
+			
+		'
+		$pdf->AddPage();
+		;
 		
 
 	}
