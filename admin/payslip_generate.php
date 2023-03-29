@@ -56,7 +56,7 @@
 		$contents .= '
 			<h2 align="center">GNET Group of Companies</h2>
 			<h4 align="center">'.$from_title." - ".$to_title.'</h4>
-			<table cellspacing="0" cellpadding="3">  
+			<table cellspacing="0" cellpadding="1">  
     	       	<tr>  
             		<td width="25%" align="right">Employee Name: </td>
                  	<td width="25%"><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
