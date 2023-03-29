@@ -81,19 +81,17 @@
 				<td width="25%" align="right">TIN No.: </td>
 				<td>nnn-nnnn-nnnnn</td> 
 			</tr>
+			<h5 align="center">EARNINGS</h5>
+			<tr>
+				<td width="25%" align="right">Regular Pay/RPH: </td>
+				<td>'.number_format($row['rate'], 2).'</td>
+			</tr>
 
 
 
 
 
 
-
-    	       	<tr>  
-            		<td width="25%" align="right">Employee Name111: </td>
-                 	<td width="25%"><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
-				 	<td width="25%" align="right">Rate per Hour: </td>
-                 	<td width="25%" align="right">'.number_format($row['rate'], 2).'</td>
-    	    	</tr>
     	    	<tr>
     	    		<td width="25%" align="right">Employee ID: </td>
 				 	<td width="25%">'.$row['employee'].'</td>   
