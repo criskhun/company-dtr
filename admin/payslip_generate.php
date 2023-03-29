@@ -72,7 +72,8 @@
 				<td width="25%" align="right">Overtime Pay: </td>
 				<td></td>
 				<td></td>
-				<td width="25%" align="right"><b>'.number_format(($row['rate']*$row['total_hr']), 2).'</b></td>
+				<td></td>
+				<td width="25%" align="right">'.number_format(($row['rate']*$row['total_hr']), 2).'</td>
 				<tr>
 				</tr>
     	    	<tr> 
