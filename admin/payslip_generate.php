@@ -160,10 +160,10 @@
 
 
     	    </table>
-    	    <br>
+    	    
 			
 		';
-		$pdf->AddPage();
+
 
 	}
     $pdf->writeHTML($contents);  
