@@ -9,9 +9,9 @@
           	</div>
           	<div class="modal-body">
                 <!-- create for holiday, change "schedule_add.php"-->
-            	<form class="form-horizontal" method="POST" action="schedule_add.php"> 
+            	<form class="form-horizontal" method="POST" action="#"> 
           		  <div class="form-group">
-                  	<label for="time_in" class="col-sm-3 control-label">Time In</label>
+                  	<label for="time_in" class="col-sm-3 control-label">Employee Name:</label>
 
                   	<div class="col-sm-9">
                       <div class="bootstrap-timepicker">
@@ -19,8 +19,49 @@
                       </div>
                   	</div>
                 </div>
+
+				<div class="form-group">
+                  	<label for="time_in" class="col-sm-3 control-label">Employee Name:</label>
+
+                  	<div class="col-sm-9">
+                      <div class="bootstrap-timepicker">
+                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
+                      </div>
+                  	</div>
+                </div>
+
+				<div class="form-group">
+                  	<label for="time_in" class="col-sm-3 control-label">Employee Name:</label>
+
+                  	<div class="col-sm-9">
+                      <div class="bootstrap-timepicker">
+                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
+                      </div>
+                  	</div>
+                </div>
+
+				<div class="form-group">
+                  	<label for="time_in" class="col-sm-3 control-label">Employee Name:</label>
+
+                  	<div class="col-sm-9">
+                      <div class="bootstrap-timepicker">
+                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
+                      </div>
+                  	</div>
+                </div>
+
+				<div class="form-group">
+                  	<label for="time_in" class="col-sm-3 control-label">Amount Paid:</label>
+
+                  	<div class="col-sm-9">
+                      <div class="bootstrap-timepicker">
+                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
+                      </div>
+                  	</div>
+                </div>
+
                 <div class="form-group">
-                    <label for="time_out" class="col-sm-3 control-label">Time Out</label>
+                    <label for="time_out" class="col-sm-3 control-label">Amount Paid</label>
 
                     <div class="col-sm-9">
                       <div class="bootstrap-timepicker">
