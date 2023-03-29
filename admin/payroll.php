@@ -52,10 +52,9 @@
           <div class="box">
             <div class="box-header with-border">
               <div class="pull-left">
-              <div class="pull-left">
-              <button type="button" class="btn btn-success btn-sm btn-flat" data-toggle="payrollmodal" data-target="#myModal">
-                <span  class="glyphicon glyphicon-pencil"></span> Create Payroll</button>
-                </div>
+              <a href="#addnew" data-toggle="modal" class="glyphicon glyphicon-pencil"><i class="fa fa-plus"></i> Create Payroll</a>
+                
+                
               </div>
               <div class="pull-right">
                 <form method="POST" class="form-inline" id="payForm">
