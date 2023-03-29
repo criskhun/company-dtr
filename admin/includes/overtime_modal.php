@@ -43,13 +43,13 @@ $dempid= mysqli_query($conn,$qempid);
                     	<input type="text" class="form-control" id="hours" name="hours">
                   	</div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   	<label for="mins" class="col-sm-3 control-label">No. of Mins</label>
 
                   	<div class="col-sm-9">
                     	<input type="text" class="form-control" id="mins" name="mins">
                   	</div>
-                </div>
+                </div> -->
                  <div class="form-group">
                     <label for="rate" class="col-sm-3 control-label">Rate</label>
 
@@ -96,13 +96,13 @@ $dempid= mysqli_query($conn,$qempid);
                       <input type="text" class="form-control" id="hours_edit" name="hours">
                     </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="mins_edit" class="col-sm-3 control-label">No. of Mins</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="mins_edit" name="mins">
                     </div>
-                </div>
+                </div> -->
                  <div class="form-group">
                     <label for="rate_edit" class="col-sm-3 control-label">Rate</label>
 
