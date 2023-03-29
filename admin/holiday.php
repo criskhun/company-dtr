@@ -87,7 +87,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/schedule_modal.php'; ?>
+  <?php include 'includes/holiday_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>
