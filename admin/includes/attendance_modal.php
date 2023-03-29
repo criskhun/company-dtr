@@ -19,15 +19,12 @@ $dempid= mysqli_query($conn,$qempid);
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 
-					  <div class="col-sm-9">
-  <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <select class="form-control" id="empid" name="empid" required onchange="this.form.submit()">
-      <option value="" selected>- Select Employee Namex -</option>
-      <?php while($row1 = mysqli_fetch_array($dempid)):;?>
-      <option value="<?php echo $row1[0]?>" <?php if(isset($_POST['empid']) && $_POST['empid']==$row1[0]) echo 'selected'; ?>><?php echo $row1[1].' '.$row1[2];?></option>
-      <?php endwhile; ?>
-    </select>
-  </form>
+					  <select class="form-control" id="empid" name="empid" required>
+		<option value="" selected>- Select Employee Name -</option>
+		<?php while($row1 = mysqli_fetch_array($dempid)):;?>
+			<option value="<?php echo $row1[0]?>" selected><?php echo $row1[1].' '.$row1[2]?></option>
+		<?php endwhile; ?>
+	</select>
 </div>
 
 
