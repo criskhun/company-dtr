@@ -92,7 +92,7 @@
 			</tr>
 			<tr>
 				<td width="25%" align="right">Total Hours: </td>
-				<td align="right">'.number_format($row['total_hr'], 2).'</td>
+				<td>'.number_format($row['total_hr'], 2).'</td>
 			</tr>
 
 
