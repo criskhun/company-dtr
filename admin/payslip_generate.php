@@ -103,7 +103,7 @@
 				<td width="25%" align="right">Overtime: </td>
 				<td>nnnnn</td>
 			</tr>
-			<tr><td> </td></tr>
+			
 			<tr>
 				<td width="25%" align="right"><b>Gross Pay: </b></td>
 				<td></td>
