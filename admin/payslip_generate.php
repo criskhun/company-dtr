@@ -54,9 +54,20 @@
   		$net = $gross - $total_deduction;
 
 		$contents .= '
-			<h2 align="center">GNET Group of Companies</h2>
-			<h4 align="center">'.$from_title." - ".$to_title.'</h4>
+			<h3 align="center">GNET Group of Companies</h3>
+			<h5 align="center">'.$from_title." - ".$to_title.'</h5>
 			<table cellspacing="0" cellpadding="3">  
+			<tr>
+				<td align="right">Employee Name111:></td>
+				<td><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
+			</tr?
+
+
+
+
+
+
+
     	       	<tr>  
             		<td width="25%" align="right">Employee Name111: </td>
                  	<td width="25%"><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
@@ -69,11 +80,13 @@
 				 	<td width="25%" align="right">Total Hours: </td>
 				 	<td width="25%" align="right">'.number_format($row['total_hr'], 2).'</td> 
     	    	</tr>
-				<td width="25%" align="right">Overtime Pay: </td>
-
-				<td align="left">'.number_format(($row['rate']*$row['total_hr']), 2).'</td>
 				<tr>
+				<td width="25%" align="right">Overtime: </td>
+				<td width="25%">'.$row['employee'].'</td>   
+				<td width="25%" align="right">Total Hours: </td>
+				<td width="25%" align="right">'.number_format($row['total_hr'], 2).'</td> 
 				</tr>
+
     	    	<tr> 
 				 	<td width="25%" align="right"><b>Gross Pay: </b></td>
 					 <td></td>
