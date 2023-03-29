@@ -119,7 +119,7 @@
 				<td>nnnnn</td>
 			</tr>
 			<tr>
-				<td width="30%" align="right"><b>Total Mandatory Deduction: </b></td>
+				<td width="25%" align="right"><b>Total Mandatory Deduction: </b></td>
 				<td></td>
 				<td></td>
 				<td><b>'.number_format($deduction, 2).'</b></td>
@@ -148,6 +148,7 @@
 				<td width="25%" align="right">NET Pay: </td>
 				<td><b>'.number_format($net, 2).'</b></td>
 			</tr>
+			<br><br><br><br><br><br>
 
 
 
