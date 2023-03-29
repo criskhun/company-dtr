@@ -103,7 +103,7 @@
 				<td></td>
 				<td><b>'.number_format(($row['rate']*$row['total_hr']), 2).'</b></td>
 			</tr>
-			<h5 align="center">---------------------------------------------------------------------------DEDUCTIONS---------------------------------------------------------------------------</h5>
+			<h5 align="center">-------------------------------------------------------------------------DEDUCTIONS-------------------------------------------------------------------------</h5>
 			<h5 align="center">MANDATORY DEDUCTION</h5>
 			
 			<tr>
@@ -115,9 +115,23 @@
 			<tr>
 				<td width="25%" align="right">PAG-IBIG: </td>
 				<td>nnnnn</td>
+				<td width="25%" align="right">TAX: </td>
+				<td>nnnnn</td>
 			</tr>
-
-
+			<h5 align="center">BASIC</h5>
+			<tr>
+				<td width="25%" align="right">Leave/Absent: </td>
+				<td>nnnnn</td>
+				<td width="25%" align="right">Undertime: </td>
+				<td>nnnnn</td>
+			</tr>
+			<h5 align="center">-----------------------------------------------------------------------------NET PAY-----------------------------------------------------------------------------</h5>
+			<tr>
+				<td width="25%" align="right"><b>Allowance: </b></td>
+				<td>nnnnn</td>
+				<td width="25%" align="right">NET Pay: </td>
+				<td><b>'.number_format($net, 2).'</b></td>
+			</tr>
 
 
 
