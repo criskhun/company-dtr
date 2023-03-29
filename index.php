@@ -2,13 +2,8 @@
 <?php include 'header.php'; ?>
 <body class="hold-transition login-page">
 
-<div class="login-box">
-  	<div class="login-logo">
-      <p> Welcome to</p>
-      <p> GNET Group of Companies</p>
-  		<p id="date"></p>
-      <p id="time" class="bold"></p>  
-  	</div>
+<div class="login-box"><div class="login-logo"><p>Welcome to</p><p>GNET Group of Companies</p><p id="date"></p><p id="time" class="bold"></p></div>
+
 
     <div id="qr-reader" style="width: 100%; min-height: 100px; text-align: center;"></div>
     <div id="qr-reader-results"></div>
