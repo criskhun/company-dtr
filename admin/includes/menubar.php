@@ -27,10 +27,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
+          <li><a href="holiday.php"><i class="fa fa-circle-o"></i> Holiday</a></li>
             <li><a href="employee.php"><i class="fa fa-circle-o"></i> Emp List</a></li>
             <li><a href="overtime.php"><i class="fa fa-circle-o"></i> Overtime</a></li>
             <li><a href="cashadvance.php"><i class="fa fa-circle-o"></i> Mandatory Deductions</a></li>
             <li><a href="schedule.php"><i class="fa fa-circle-o"></i> Schedules</a></li>
+            <li><a href="holiday.php"><i class="fa fa-circle-o"></i> Holiday</a></li>
           </ul>
         </li>
         <!-- <li><a href="sales.php"><i class="fa fa-dollar"></i> <span>Sales</span></a></li> -->
