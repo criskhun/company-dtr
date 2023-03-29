@@ -103,7 +103,17 @@
 				<td></td>
 				<td><b>'.number_format(($row['rate']*$row['total_hr']), 2).'</b></td>
 			</tr>
-
+			<h5 align="center">---------------------------------------------------------------------------DEDUCTIONS---------------------------------------------------------------------------</h5>
+			<h5 align="center">MANDATORY DEDUCTION</h5>
+			
+			<tr>
+				<td width="25%" align="right">SSS: </td>
+				<td>nnnn</td>
+				<td width="25%" align="right">PHILHEALTH: </td>
+				<td>nnnnn</td>
+				<td width="25%" align="right">PAG-IBIG: </td>
+				<td>nnnnn</td>
+			</tr>
 
 
 
