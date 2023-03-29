@@ -176,7 +176,7 @@
 
 
     	    </table>
-    	    <br>
+    	    <br><br><br><br><br><br><br><br><br><br><br><br><br>
 		';
 	}
     $pdf->writeHTML($contents);  
