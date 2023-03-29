@@ -58,7 +58,7 @@
 			<h4 align="center">'.$from_title." - ".$to_title.'</h4>
 			<table cellspacing="0" cellpadding="3">  
     	       	<tr>  
-            		<td width="25%" align="right">Employee Name: </td>
+            		<td width="25%" align="right">Employee Name111: </td>
                  	<td width="25%"><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
 				 	<td width="25%" align="right">Rate per Hour: </td>
                  	<td width="25%" align="right">'.number_format($row['rate'], 2).'</td>
