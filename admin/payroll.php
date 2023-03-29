@@ -148,6 +148,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
+  <?php include 'includes/schedule_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?> 
 <script>
