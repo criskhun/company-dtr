@@ -60,6 +60,7 @@
                   <th>SSS</th>
                   <th>Pag-Ibig</th>
                   <th>Philhealth</th>
+                  <th>TAX</th>
                   <th>Tools</th>
                 </thead>
                 <tbody>
@@ -76,6 +77,7 @@
                           <td>".number_format($row['amount'], 2)."</td>
                           <td>".number_format($row['sss'], 2)."</td>
                           <td>".number_format($row['pagibig'], 2)."</td>
+                          <td>".number_format($row['philhealth'], 2)."</td>
                           <td>".number_format($row['philhealth'], 2)."</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['caid']."'><i class='fa fa-edit'></i> Edit</button>
