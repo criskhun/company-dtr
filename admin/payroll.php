@@ -53,7 +53,7 @@
             <div class="box-header with-border">
               <div class="pull-left">
 
-              <button type="button" class="btn btn-success btn-sm btn-flat" data-toggle="modal" data-target="#addnew">
+              <button type="button" class="btn btn-success btn-sm btn-flat" data-toggle="modal" href="#addnew">
                 <span  class="glyphicon glyphicon-pencil"></span> Create Payroll</button>
                 
                 
