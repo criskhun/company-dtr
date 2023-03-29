@@ -70,7 +70,7 @@
 				 	<td width="25%" align="right">'.number_format($row['total_hr'], 2).'</td> 
     	    	</tr>
     	    	<tr> 
-    	    		<td></td> 
+    	    		
     	
 				 	<td width="25%" align="right"><b>Gross Pay: </b></td>
 					 <td></td>
