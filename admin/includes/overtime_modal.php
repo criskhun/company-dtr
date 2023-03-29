@@ -101,8 +101,8 @@ $dempid= mysqli_query($conn,$qempid);
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="mins_edit" name="mins">
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
                  <div class="form-group">
                     <label for="rate_edit" class="col-sm-3 control-label">Rate</label>
 
