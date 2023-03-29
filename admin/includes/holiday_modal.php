@@ -54,6 +54,14 @@ $dempid= mysqli_query($conn,$qempid);
                     	<input type="text" class="form-control" id="mins" name="mins">
                   	</div>
                 </div> -->
+				<div class="form-group">
+                  	<label for="hours" class="col-sm-3 control-label">Amount Paid</label>
+
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="hours" name="hours">
+                  	</div>
+                </div>
+				
                  <div class="form-group">
                     <label for="rate" class="col-sm-3 control-label">Per Hour Rate</label>
 
@@ -63,13 +71,7 @@ $dempid= mysqli_query($conn,$qempid);
                     </div>
                 </div>
           	</div>
-			  <div class="form-group">
-                  	<label for="hours" class="col-sm-3 control-label">Amount Paid</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="hours" name="hours">
-                  	</div>
-                </div>
+			  
         
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
