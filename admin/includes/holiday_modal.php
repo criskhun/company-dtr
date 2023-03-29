@@ -15,9 +15,8 @@ $dempid= mysqli_query($conn,$qempid);
             	<h4 class="modal-title"><b>Rendered Holiday</b></h4>
           	</div>
           	<div class="modal-body">
-                <!-- create for holiday, change "schedule_add.php"-->
-            	<form class="form-horizontal" method="POST" action="#"> 
-				<div class="form-group">
+            	<form class="form-horizontal" method="POST" action="attendance_add.php">
+          		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee Name</label>
 					  <div class="col-sm-9">
     <select class="form-control" id="empid" name="empid" required>
@@ -27,28 +26,32 @@ $dempid= mysqli_query($conn,$qempid);
         <?php endwhile; ?>
     </select>
 </div>
-
-				<div class="form-group">
-                  	<label for="time_in" class="col-sm-3 control-label">Holiday Type:</label>
-					  <div class="col-sm-9">
-                  	<select class="form-control" id="empid" name="empid" required>
-        <option value="" selected disabled>- Please Select Holiday -</option>
-            <option value="Special Holiday" > Special Holiday</option>
-			<option value="Special Holiday" > Regular Holiday</option>
-    </select>
-</div>
                 </div>
+                <div class="form-group">
+                    <label for="datepicker_add" class="col-sm-3 control-label">Date</label>
 
-				<div class="form-group">
-                  	<label for="time_in" class="col-sm-3 control-label">Number of Hours:</label>
+                    <div class="col-sm-9"> 
+                      <div class="date">
+                        <input type="text" class="form-control" id="datepicker_add" name="date" required>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  	<label for="hours" class="col-sm-3 control-label">No. of Hours</label>
 
                   	<div class="col-sm-9">
                     	<input type="text" class="form-control" id="hours" name="hours">
                   	</div>
                 </div>
+                <!-- <div class="form-group">
+                  	<label for="mins" class="col-sm-3 control-label">No. of Mins</label>
 
-				<div class="form-group">
-                    <label for="rate" class="col-sm-3 control-label">Hour per Rate</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="mins" name="mins">
+                  	</div>
+                </div> -->
+                 <div class="form-group">
+                    <label for="rate" class="col-sm-3 control-label">Rate</label>
 
                     <div class="col-sm-9">
                       <!-- <input type="text" class="form-control" id="rate" name="rate" required> -->
@@ -56,14 +59,6 @@ $dempid= mysqli_query($conn,$qempid);
                     </div>
                 </div>
           	</div>
-
-				<div class="form-group">
-                  	<label for="time_in" class="col-sm-3 control-label">Amount Paid:</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="hours" name="hours">
-                  	</div>
-                </div>
 
         
           	<div class="modal-footer">
