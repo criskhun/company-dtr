@@ -63,6 +63,12 @@
 				<td width="25%" align="right">Employee ID: </td>
 				<td>'.$row['employee'].'</td> 
 			</tr>
+			<tr>
+				<td width="25%" align="right">Branch/Dept:</td>
+				<td><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
+				<td width="25%" align="right">Employee ID: </td>
+				<td>Jollibee - Makar</td> 
+			</tr>
 
 
 
