@@ -52,7 +52,7 @@
           <div class="box">
             <div class="box-header with-border">
               <div class="pull-left">
-              <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-print"></span> Payroll</button>
+              <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-pencil"></span> Create Payroll</button>
               </div>
               <div class="pull-right">
                 <form method="POST" class="form-inline" id="payForm">
