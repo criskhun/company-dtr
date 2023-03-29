@@ -81,7 +81,7 @@
 				<td width="25%" align="right">TIN No.: </td>
 				<td>nnn-nnnn-nnnnn</td> 
 			</tr>
-			<h5 align="center">--------------------EARNINGS--------------------</h5>
+			<h5 align="center">----------------------------------------EARNINGS----------------------------------------</h5>
 			<tr>
 				<td width="25%" align="right">Regular Pay/RPH: </td>
 				<td>'.number_format($row['rate'], 2).'</td>
