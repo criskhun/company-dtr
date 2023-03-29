@@ -30,13 +30,13 @@ $dempid= mysqli_query($conn,$qempid);
 
 				<div class="form-group">
                   	<label for="time_in" class="col-sm-3 control-label">Holiday Type:</label>
-
+					  <div class="col-sm-9">
                   	<select class="form-control" id="empid" name="empid" required>
         <option value="" selected disabled>- Please Select Holiday -</option>
-        
             <option value="Special Holiday" > Special Holiday</option>
 			<option value="Special Holiday" > Regular Holiday</option>
     </select>
+</div>
                 </div>
 
 				<div class="form-group">
