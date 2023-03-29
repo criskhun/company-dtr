@@ -31,6 +31,8 @@
     $pdf->AddPage(); 
     $contents = '';
 
+	$pdf->AddPage();
+
 	$sql = "SELECT *, SUM(num_hr) AS total_hr, SUM(sales.amount) AS totalsales, attendance.employee_id AS empid, employees.employee_id AS employee FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND position.description NOT IN ('UNIT MANAGER','ACCOUNT EXECUTIVE') GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
 
 	$query = $conn->query($sql);
@@ -54,6 +56,8 @@
   		$net = $gross - $total_deduction;
 
 		$contents .= '
+
+		
 			<h3 align="center">GNET Group of Companies</h3>
 			<h5 align="center">'.$from_title." - ".$to_title.'</h5>
 			<table cellspacing="0" cellpadding="3">  
@@ -148,38 +152,41 @@
 				<td width="25%" align="right">NET Pay: </td>
 				<td><b>'.number_format($net, 2).'</b></td>
 			</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			</tr>
 
 
 
     	    </table>
-    	    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    	    <br>
 		';
+
+
 	}
     $pdf->writeHTML($contents);  
     $pdf->Output('payslip.pdf', 'I');
 
 ?>
+
+<!-- <tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			</tr>
+			<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			</tr>
+			<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			</tr>
+			<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			</tr> -->
