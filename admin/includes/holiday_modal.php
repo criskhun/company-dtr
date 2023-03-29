@@ -1,3 +1,10 @@
+<?php 
+include 'conn.php'; 
+
+$qempid = "select distinct employee_id, firstname, lastname from employees";
+$dempid= mysqli_query($conn,$qempid);
+?>
+
 <!-- Add -->
 <div class="modal fade" id="addnewhol">
     <div class="modal-dialog">
@@ -10,66 +17,55 @@
           	<div class="modal-body">
                 <!-- create for holiday, change "schedule_add.php"-->
             	<form class="form-horizontal" method="POST" action="#"> 
-          		  <div class="form-group">
-                  	<label for="time_in" class="col-sm-3 control-label">Employee Name:</label>
+				<div class="form-group">
+                  	<label for="employee" class="col-sm-3 control-label">Employee Name</label>
+					  <div class="col-sm-9">
+    <select class="form-control" id="empid" name="empid" required>
+        <option value="" selected disabled>- Select Employee Name NEW -</option>
+        <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+            <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+        <?php endwhile; ?>
+    </select>
+</div>
+
+				<div class="form-group">
+                  	<label for="time_in" class="col-sm-3 control-label">Holiday Type:</label>
+
+                  	<select class="form-control" id="empid" name="empid" required>
+        <option value="" selected disabled>- Please Select Holiday -</option>
+        
+            <option value="Special Holiday" > Special Holiday</option>
+			<option value="Special Holiday" > Regular Holiday</option>
+    </select>
+                </div>
+
+				<div class="form-group">
+                  	<label for="time_in" class="col-sm-3 control-label">Number of Hours:</label>
 
                   	<div class="col-sm-9">
-                      <div class="bootstrap-timepicker">
-                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
-                      </div>
+                    	<input type="text" class="form-control" id="hours" name="hours">
                   	</div>
                 </div>
 
 				<div class="form-group">
-                  	<label for="time_in" class="col-sm-3 control-label">Employee Name:</label>
+                    <label for="rate" class="col-sm-3 control-label">Hour per Rate</label>
 
-                  	<div class="col-sm-9">
-                      <div class="bootstrap-timepicker">
-                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
-                      </div>
-                  	</div>
+                    <div class="col-sm-9">
+                      <!-- <input type="text" class="form-control" id="rate" name="rate" required> -->
+					  <input type="text" class="form-control" id="rate" name="rate" readonly>
+                    </div>
                 </div>
-
-				<div class="form-group">
-                  	<label for="time_in" class="col-sm-3 control-label">Employee Name:</label>
-
-                  	<div class="col-sm-9">
-                      <div class="bootstrap-timepicker">
-                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
-                      </div>
-                  	</div>
-                </div>
-
-				<div class="form-group">
-                  	<label for="time_in" class="col-sm-3 control-label">Employee Name:</label>
-
-                  	<div class="col-sm-9">
-                      <div class="bootstrap-timepicker">
-                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
-                      </div>
-                  	</div>
-                </div>
+          	</div>
 
 				<div class="form-group">
                   	<label for="time_in" class="col-sm-3 control-label">Amount Paid:</label>
 
                   	<div class="col-sm-9">
-                      <div class="bootstrap-timepicker">
-                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
-                      </div>
+                    	<input type="text" class="form-control" id="hours" name="hours">
                   	</div>
                 </div>
 
-                <div class="form-group">
-                    <label for="time_out" class="col-sm-3 control-label">Amount Paid</label>
-
-                    <div class="col-sm-9">
-                      <div class="bootstrap-timepicker">
-                        <input type="text" class="form-control timepicker" id="time_out" name="time_out" required>
-                      </div>
-                    </div>
-                </div>
-          	</div>
+        
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
             	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
