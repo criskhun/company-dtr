@@ -118,6 +118,12 @@
 				<td width="25%" align="right">TAX: </td>
 				<td>nnnnn</td>
 			</tr>
+			<tr>
+				<td width="25%" align="right"><b>Total Mandatory Deduction: </b></td>
+				<td></td>
+				<td></td>
+				<td><b>'.number_format($deduction, 2).'</b></td>
+			</tr>
 			<h5 align="center">BASIC</h5>
 			<tr>
 				<td width="25%" align="right">Leave/Absent: </td>
@@ -143,17 +149,6 @@
 				<td><b>'.number_format($net, 2).'</b></td>
 			</tr>
 
-
-
-
-
- 
-    	    	<tr> 
-    	    		<td></td> 
-    	    		<td></td>
-				 	<td width="25%" align="right">Deduction: </td>
-				 	<td width="25%" align="right">'.number_format($deduction, 2).'</td> 
-    	    	</tr>
 
 
     	    </table>
