@@ -17,7 +17,7 @@ $dempid= mysqli_query($conn,$qempid);
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="attendance_add.php">
           		  <div class="form-group">
-                  	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
+                  	<label for="employee" class="col-sm-3 control-label">Employee Name</label>
 					  <div class="col-sm-9">
     <select class="form-control" id="empid" name="empid" required>
         <option value="" selected disabled>- Select Employee Name NEW -</option>
