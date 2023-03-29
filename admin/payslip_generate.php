@@ -36,6 +36,8 @@
 	$sql = "SELECT *, SUM(num_hr) AS total_hr, SUM(sales.amount) AS totalsales, attendance.employee_id AS empid, employees.employee_id AS employee FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND position.description NOT IN ('UNIT MANAGER','ACCOUNT EXECUTIVE') GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
 
 	$query = $conn->query($sql);
+
+	$pdf->AddPage();
 	while($row = $query->fetch_assoc()){
 		$empid = $row['empid'];
                       
@@ -55,7 +57,7 @@
 		$total_deduction = $deduction + $cashadvance + $salesaprdeduc;
   		$net = $gross - $total_deduction;
 
-		  $pdf->AddPage();
+		  
 
 		$contents .= '
 
