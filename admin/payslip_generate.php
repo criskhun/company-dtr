@@ -97,10 +97,11 @@
 				<td>nnnnn</td>
 			</tr>
 			<tr>
-				<td width="25%" align="right">Gross Pay: </td>
+			<td></td>
+				<td width="25%" align="right"><b>Gross Pay: </b></td>
 				<td></td>
 				<td></td>
-				<td>'.number_format($row['total_hr'], 2).'</td>
+				<td><b>'.number_format(($row['rate']*$row['total_hr']), 2).'</b></td>
 			</tr>
 
 
@@ -110,12 +111,7 @@
 
 
 
-    	    	<tr> 
-				 	<td width="25%" align="right"><b>Gross Pay: </b></td>
-					 <td></td>
-					 <td></td>
-				 	<td width="25%" align="right"><b>'.number_format(($row['rate']*$row['total_hr']), 2).'</b></td> 
-    	    	</tr>
+ 
     	    	<tr> 
     	    		<td></td> 
     	    		<td></td>
