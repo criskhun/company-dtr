@@ -20,7 +20,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Payroll2</li>
+        <li class="active">Payroll</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -51,6 +51,9 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
+              <div class="pull-left">
+              <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-print"></span> Payroll</button>
+              </div>
               <div class="pull-right">
                 <form method="POST" class="form-inline" id="payForm">
                   <div class="input-group">
