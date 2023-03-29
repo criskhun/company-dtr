@@ -52,7 +52,7 @@
           <div class="box">
             <div class="box-header with-border">
               <div class="pull-left">
-              <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-pencil"></span> Create Payroll</button>
+              <button type="button" class="btn btn-success btn-sm btn-flat" id="createpayroll"><span class="glyphicon glyphicon-pencil"></span> Create Payroll</button>
               </div>
               <div class="pull-right">
                 <form method="POST" class="form-inline" id="payForm">
@@ -188,6 +188,13 @@ $(function(){
   $('#payslip').click(function(e){
     e.preventDefault();
     $('#payForm').attr('action', 'payslip_generate.php');
+    $('#payForm').attr('target', '_blank'); // add target attribute
+    $('#payForm').submit();
+  });
+
+  $('#createpayroll').click(function(e){
+    e.preventDefault();
+    $('#payForm').attr('action', 'sales_modal.php');
     $('#payForm').attr('target', '_blank'); // add target attribute
     $('#payForm').submit();
   });
