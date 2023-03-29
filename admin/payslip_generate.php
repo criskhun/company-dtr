@@ -125,6 +125,16 @@
 				<td width="25%" align="right">Undertime: </td>
 				<td>nnnnn</td>
 			</tr>
+			<tr>
+				<td width="25%" align="right">Cash Advance: </td>
+				<td>'.number_format($cashadvance, 2).'</td>
+			</tr>
+			<tr>
+				<td width="25%" align="right"><b>Total Deduction: </b></td>
+				<td></td>
+				<td></td>
+				<td><b>'.number_format($total_deduction, 2).'</b></td>
+			</tr>
 			<h5 align="center">-----------------------------------------------------------------------------NET PAY-----------------------------------------------------------------------------</h5>
 			<tr>
 				<td width="25%" align="right"><b>Allowance: </b></td>
@@ -144,24 +154,8 @@
 				 	<td width="25%" align="right">Deduction: </td>
 				 	<td width="25%" align="right">'.number_format($deduction, 2).'</td> 
     	    	</tr>
-    	    	<tr> 
-    	    		<td></td> 
-    	    		<td></td>
-				 	<td width="25%" align="right">Cash Advance: </td>
-				 	<td width="25%" align="right">'.number_format($cashadvance, 2).'</td> 
-    	    	</tr>
-    	    	<tr> 
-    	    		<td></td> 
-    	    		<td></td>
-				 	<td width="25%" align="right"><b>Total Deduction:</b></td>
-				 	<td width="25%" align="right"><b>'.number_format($total_deduction, 2).'</b></td> 
-    	    	</tr>
-    	    	<tr> 
-    	    		<td></td> 
-    	    		<td></td>
-				 	<td width="25%" align="right"><b>Net Pay:</b></td>
-				 	<td width="25%" align="right"><b>'.number_format($net, 2).'</b></td> 
-    	    	</tr>
+
+
     	    </table>
     	    <br><hr>
 		';
