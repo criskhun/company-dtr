@@ -159,12 +159,18 @@
 
 
     	    </table>
-    	    <br><hr>
-			'
-			$pdf->AddPage();
+    	    
+			
+			
+			'.$pdf->AddPage();.'
+			<br><hr>
 			'
 			
-		';
+
+			
+			
+			
+		;
 
 
 	}
