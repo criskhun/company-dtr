@@ -37,7 +37,7 @@
 
 	$query = $conn->query($sql);
 
-	$pdf->AddPage();
+	
 	while($row = $query->fetch_assoc()){
 		$empid = $row['empid'];
                       
@@ -162,7 +162,7 @@
     	    </table>
     	    <br>
 		';
-
+		$pdf->AddPage();
 
 	}
     $pdf->writeHTML($contents);  
