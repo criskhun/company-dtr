@@ -58,9 +58,9 @@
 			<h5 align="center">'.$from_title." - ".$to_title.'</h5>
 			<table cellspacing="0" cellpadding="3">  
 			<tr>
-				<td align="right">Employee Name111:></td>
+				<td align="right">Employee Name:</td>
 				<td><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
-			</tr?
+			</tr>
 
 
 
