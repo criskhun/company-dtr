@@ -60,6 +60,8 @@
 			<tr>
 				<td width="25%" align="right">Employee Name:</td>
 				<td><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
+				<td width="25%" align="right">Employee ID: </td>
+				<td>'.$row['employee'].'</td> 
 			</tr>
 
 
