@@ -155,44 +155,12 @@
 				<td width="25%" align="right">NET Pay: </td>
 				<td><b>'.number_format($net, 2).'</b></td>
 			</tr>
-
-
-
-    	    </table>
-    	    
-			
-			
-	
+   	    </table>    	    
 			';
-
+			$pdf->AddPage(); 
 
 	}
     $pdf->writeHTML($contents);  
     $pdf->Output('payslip.pdf', 'I');
 
 ?>
-
-<!-- <tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			</tr> -->
