@@ -161,6 +161,7 @@
 
     	    </table>
     	    <br>
+			$pdf->AddPage();
 		';
 		
 
