@@ -7,6 +7,7 @@
 		$sss = $_POST['sss'];
 		$pagibig = $_POST['pagibig'];
 		$philhealth = $_POST['philhealth'];
+		$tax = $_POST['tax'];
 		
 		$sql = "SELECT * FROM employees WHERE employee_id = '$employee'";
 		$query = $conn->query($sql);
@@ -16,7 +17,7 @@
 		else{
 			$row = $query->fetch_assoc();
 			$employee_id = $row['id'];
-			$sql = "INSERT INTO cashadvance (employee_id, date_advance, amount, sss, pagibig, philhealth) VALUES ('$employee_id', NOW(), '$amount', '$sss', '$pagibig', '$philhealth')";
+			$sql = "INSERT INTO cashadvance (employee_id, date_advance, amount, sss, pagibig, philhealth, tax) VALUES ('$employee_id', NOW(), '$amount', '$sss', '$pagibig', '$philhealth')";
 			if($conn->query($sql)){
 				$_SESSION['success'] = 'Mandatory Deductions added successfully';
 			}

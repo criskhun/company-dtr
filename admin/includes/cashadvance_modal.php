@@ -45,7 +45,13 @@
                       <input type="text" class="form-control" id="philhealth" name="philhealth" required>
                     </div>
                 </div>
+				<div class="form-group">
+                    <label for="tax" class="col-sm-3 control-label">Tax</label>
 
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="tax" name="tax" required>
+                    </div>
+                </div>
           	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
@@ -97,6 +103,14 @@
                       <input type="text" class="form-control" id="edit_philhealth" name="philhealth" required>
                     </div>
                 </div>
+				<div class="form-group">
+                    <label for="edit_tax" class="col-sm-3 control-label">Tax</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_tax" name="tax" required>
+                    </div>
+                </div>
+          	</div>
           	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>

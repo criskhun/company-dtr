@@ -134,6 +134,7 @@ function getRow(id){
       $('#edit_sss').val(response.sss);
       $('#edit_pagibig').val(response.pagibig);
       $('#edit_philhealth').val(response.philhealth);
+      $('#edit_tax').val(response.tax);
       
       
     }
