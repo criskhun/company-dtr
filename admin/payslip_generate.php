@@ -160,6 +160,9 @@
 
     	    </table>
     	    <br><hr>
+			'
+			$pdf->AddPage();
+			'
 			
 		';
 
