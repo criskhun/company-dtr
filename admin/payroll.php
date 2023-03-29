@@ -53,7 +53,7 @@
             <div class="box-header with-border">
               <div class="pull-left">
               <div class="pull-left">
-              <button type="button" class="btn btn-success btn-sm btn-flat" data-toggle="modal" data-target="#myModal">
+              <button type="button" class="btn btn-success btn-sm btn-flat" data-toggle="payrollmodal" data-target="#myModal">
                 <span  class="glyphicon glyphicon-pencil"></span> Create Payroll</button>
                 </div>
               </div>
@@ -247,7 +247,7 @@ window.onclick = function(event) {
   }
 }
 
-<div id="myModal" class="modal">
+<div id="payrollmodal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
     <p>Modal content goes here.</p>
