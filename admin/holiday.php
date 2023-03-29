@@ -52,9 +52,10 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Time In</th>
-                  <th>Time Out</th>
-                  <th>Tools</th>
+                  <th>Employee</th>
+                  <th>Holiday Type</th>
+                  <th>No_Hours</th>
+                  <th>Amount</th>
                 </thead>
                 <tbody>
                   <?php
