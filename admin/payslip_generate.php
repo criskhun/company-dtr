@@ -119,7 +119,7 @@
 				<td>nnnnn</td>
 			</tr>
 			<tr>
-				<td width="25%" align="right"><b>Total Mandatory Deduction: </b></td>
+				<td width="10%" align="right"><b>Total Mandatory Deduction: </b></td>
 				<td></td>
 				<td></td>
 				<td><b>'.number_format($deduction, 2).'</b></td>
