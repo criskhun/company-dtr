@@ -60,7 +60,7 @@
                   <th>SSS</th>
                   <th>Pag-Ibig</th>
                   <th>Philhealth</th>
-                  <th>TAX</th>
+                  <!-- <th>TAX</th> -->
                   <th>Tools</th>
                 </thead>
                 <tbody>
@@ -78,7 +78,7 @@
                           <td>".number_format($row['sss'], 2)."</td>
                           <td>".number_format($row['pagibig'], 2)."</td>
                           <td>".number_format($row['philhealth'], 2)."</td>
-                          <td>"0.00"</td>
+                          // <td>"0.00"</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['caid']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['caid']."'><i class='fa fa-trash'></i> Delete</button>
@@ -134,6 +134,7 @@ function getRow(id){
       $('#edit_sss').val(response.sss);
       $('#edit_pagibig').val(response.pagibig);
       $('#edit_philhealth').val(response.philhealth);
+      
       
     }
   });
