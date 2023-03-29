@@ -2,7 +2,7 @@
 <?php include 'header.php'; ?>
 <body class="hold-transition login-page">
 
-<div class="login-box" style="width: 500px;"><div class="login-logo"><p>Welcome to2<br>GNET Group of Companies</p><p id="date"></p><p id="time" class="bold"></p></div>
+<div class="login-box" style="width: 500px;"><div class="login-logo"><p>Welcome to<br>GNET Group of Companies</p><p id="date"></p><p id="time" class="bold"></p></div>
 
 
 
