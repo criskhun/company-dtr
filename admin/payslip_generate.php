@@ -64,7 +64,7 @@
 		
 			<h3 align="center">GNET Group of Companies</h3>
 			<h5 align="center">'.$from_title." - ".$to_title.'</h5>
-			<table cellspacing="0" cellpadding="1">  
+			<table cellspacing="0" cellpadding="0">  
 			<tr>
 				<td width="25%" align="right">Employee Name:</td>
 				<td><b>'.$row['firstname']." ".$row['lastname'].'</b></td>
