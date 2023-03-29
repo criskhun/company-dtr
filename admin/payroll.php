@@ -56,7 +56,7 @@
               <button type="button" class="btn btn-success btn-sm btn-flat" data-toggle="modal" data-target="#addnew">
                 <span  class="glyphicon glyphicon-pencil"></span> Create Payroll</button>
                 
-                </div>
+                
               </div>
               <div class="pull-right">
                 <form method="POST" class="form-inline" id="payForm">
