@@ -111,6 +111,8 @@
 				<td>nnnn</td>
 				<td width="25%" align="right">PHILHEALTH: </td>
 				<td>nnnnn</td>
+			</tr>
+			<tr>
 				<td width="25%" align="right">PAG-IBIG: </td>
 				<td>nnnnn</td>
 			</tr>
