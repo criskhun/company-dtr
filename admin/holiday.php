@@ -65,10 +65,10 @@
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
-                          <td>".date('h:i A', strtotime($row['time_in']))."</td>
-                          <td>".date('h:i A', strtotime($row['time_out']))."</td>
-                          <td>".date('h:i A', strtotime($row['time_in']))."</td>
-                          <td>".date('h:i A', strtotime($row['time_out']))."</td>
+                          <td>cris</td>
+                          <td>Regular</td>
+                          <td>8</td>
+                          <td>1800</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
