@@ -149,7 +149,7 @@
     
   <?php include 'includes/footer.php'; ?>
   <?php include 'includes/payroll_modal.php'; ?>
-</div>
+h</div>
 <?php include 'includes/scripts.php'; ?> 
 <script>
 $(function(){

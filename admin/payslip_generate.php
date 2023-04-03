@@ -157,7 +157,8 @@
 			</tr>
    	    </table>  
 		<br>
-		<hr>  	    
+		<hr>
+		$pdf->AddPage(); 
 			';
 			
 
