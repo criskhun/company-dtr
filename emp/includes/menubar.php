@@ -16,6 +16,7 @@
         <li class="header">REPORTS</li>
         <li class=""><a href="home.php"><i class="fa fa-dashboard"></i> <span> Dashboard</span></a></li>
         <li class="header">MANAGE</li>
+        <li><a href="cashadvance.php"><i class="fa fa-files-o"></i> <span>Deductions</span></a></li>
         <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Payslip</span></a></li>
         
         <!-- <li><a href="sales.php"><i class="fa fa-dollar"></i> <span>Sales</span></a></li> -->
