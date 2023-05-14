@@ -70,25 +70,10 @@
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
-                      $sss = isset($row['sss']) ? $row['sss'] : 900;
-                      if ($sss < 0) {
-                        $sss = abs($sss);
-                      }
-                      
-                      $pagibig = isset($row['pagibig']) ? $row['pagibig'] : 300;
-                      if ($pagibig < 0) {
-                        $pagibig = abs($pagibig);
-                      }
-                      
-                      $philhealth = isset($row['philhealth']) ? $row['philhealth'] : 1200;
-                      if ($philhealth < 0) {
-                        $philhealth = abs($philhealth);
-                      }
-                      
+                      $sss = 0.0363 * $gross;
+                      $pagibig = 0.02 * $gross;
+                      $philhealth = 0.03 * $gross;
                       $tax = 0.05 * ($gross - 20000);
-                      if ($tax < 0) {
-                        $tax = abs($tax);
-                      }
 
 
                       echo "
