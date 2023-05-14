@@ -86,7 +86,7 @@
                           <td>".number_format($sss, 2)."</td>
                           <td>".number_format($pagibig, 2)."</td>
                           <td>".number_format($philhealth, 2)."</td>
-                          <td>".number_format($tax, 2)."</td>
+                          <td>".number_format(abs($tax), 2)."</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['caid']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['caid']."'><i class='fa fa-trash'></i> Delete</button>
