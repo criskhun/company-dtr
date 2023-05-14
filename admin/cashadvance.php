@@ -65,7 +65,7 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT ca.*, ca.id AS caid, emp.employee_id AS empid, att.total_hr, s.totalsales, pos.rate FROM cashadvance AS ca LEFT JOIN ( SELECT employee_id, SUM(num_hr) AS total_hr FROM attendance GROUP BY employee_id ) AS att ON att.employee_id = ca.employee_id LEFT JOIN ( SELECT employee_id, SUM(amount) AS totalsales FROM sales GROUP BY employee_id ) AS s ON s.employee_id = ca.employee_id LEFT JOIN employees AS emp ON emp.id = ca.employee_id LEFT JOIN ( SELECT id, rate FROM position GROUP BY id ) AS pos ON pos.id = emp.position_id WHERE rate is not null and att.employee_id = $user_id ORDER BY ca.date_advance DESC";
+                    $sql = "SELECT ca.*, ca.id AS caid, emp.employee_id AS empid, att.total_hr, s.totalsales, pos.rate FROM cashadvance AS ca LEFT JOIN ( SELECT employee_id, SUM(num_hr) AS total_hr FROM attendance GROUP BY employee_id ) AS att ON att.employee_id = ca.employee_id LEFT JOIN ( SELECT employee_id, SUM(amount) AS totalsales FROM sales GROUP BY employee_id ) AS s ON s.employee_id = ca.employee_id LEFT JOIN employees AS emp ON emp.id = ca.employee_id LEFT JOIN ( SELECT id, rate FROM position GROUP BY id ) AS pos ON pos.id = emp.position_id WHERE rate is not null ORDER BY ca.date_advance DESC";
 
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
