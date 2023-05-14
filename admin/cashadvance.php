@@ -65,9 +65,17 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT *, cashadvance.id AS caid, employees.employee_id AS empid FROM cashadvance LEFT JOIN employees ON employees.id=cashadvance.employee_id ORDER BY date_advance DESC";
+                    $sql = "SELECT ca.*, ca.id AS caid, emp.employee_id AS empid, att.total_hr, s.totalsales, pos.rate FROM cashadvance AS ca LEFT JOIN ( SELECT employee_id, SUM(num_hr) AS total_hr FROM attendance GROUP BY employee_id ) AS att ON att.employee_id = ca.employee_id LEFT JOIN ( SELECT employee_id, SUM(amount) AS totalsales FROM sales GROUP BY employee_id ) AS s ON s.employee_id = ca.employee_id LEFT JOIN employees AS emp ON emp.id = ca.employee_id LEFT JOIN ( SELECT id, rate FROM position GROUP BY id ) AS pos ON pos.id = emp.position_id WHERE rate is not null ORDER BY ca.date_advance DESC";
+
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
+                      $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
+                      $sss = 0.0363 * $gross;
+                      $pagibig = 0.02 * $gross;
+                      $philhealth = 0.03 * $gross;
+                      $tax = 0.05 * ($gross - 20000);
+
+
                       echo "
                         <tr>
                           <td class='hidden'></td>
@@ -75,10 +83,10 @@
                           <td>".$row['empid']."</td>
                           <td>".$row['firstname'].' '.$row['lastname']."</td>
                           <td>".number_format($row['amount'], 2)."</td>
-                          <td>".number_format($row['sss'], 2)."</td>
-                          <td>".number_format($row['pagibig'], 2)."</td>
-                          <td>".number_format($row['philhealth'], 2)."</td>
-                          <td>".number_format($row['tax'], 2)."</td>
+                          <td>".number_format($sss, 2)."</td>
+                          <td>".number_format($pagibig, 2)."</td>
+                          <td>".number_format($philhealth, 2)."</td>
+                          <td>".number_format($tax, 2)."</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['caid']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['caid']."'><i class='fa fa-trash'></i> Delete</button>
