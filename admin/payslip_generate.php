@@ -73,7 +73,7 @@
 			</tr>
 			<tr>
 				<td width="25%" align="right">Branch/Dept:</td>
-				<td>Jollibee - Makar</td>
+				<td>Jollibee - </td>
 				<td width="25%" align="right">TAX Status: </td>
 				<td>S</td> 
 			</tr>
