@@ -141,6 +141,8 @@
 			<tr>
 				<td width="25%" align="right">Cash Advance: </td>
 				<td>'.number_format($cashadvance, 2).'</td>
+				<td width="25%" align="right">Other Deductions: </td>
+				<td>'.number_format($cashadvance, 2).'</td>
 			</tr>
 			<tr>
 				<td width="25%" align="right"><b>Total Deduction: </b></td>
