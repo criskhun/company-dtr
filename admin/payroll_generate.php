@@ -44,7 +44,7 @@
 
 		$contents .= '
 			<tr>
-				<td colspan="5" align="right"><b>Total</b></td>
+				<td colspan="6" align="right"><b>Total</b></td>
 				<td align="right"><b>'.number_format($total, 2).'</b></td>
 			</tr>
 		';
