@@ -84,12 +84,13 @@
       	<h4 align="center">'.$from_title." - ".$to_title.'</h4>
       	<table border="1" cellspacing="0" cellpadding="3">  
            <tr>  
-           		<th width="20%" align="center"><b>Agent Name</b></th>
-				<th width="15%" align="center"><b>Agent ID</b></th>
-				<th width="15%" align="center"><b>Cash Advance</b></th>
-				<th width="15%" align="center"><b>Savings Bond</b></th>
-				<th width="15%" align="center"><b>Approvals</b></th>
-				<th width="15%" align="center"><b>Net Pay</b></th> 
+		   <th width="20%" align="center"><b>Agent Name</b></th>
+		   <th width="15%" align="center"><b>Gross</b></th>
+		   <th width="15%" align="center"><b>Allowance</b></th>
+		   <th width="15%" align="center"><b>Cash Advance</b></th>
+		   <th width="15%" align="center"><b>Mandatory Deduction</b></th>
+		   <th width="15%" align="center"><b>Basic Deduction</b></th>
+		   <th width="15%" align="center"><b>Net Pay</b></th> 
            </tr>  
       ';  
     $content .= generateRow($from, $to, $conn, $deduction);  
