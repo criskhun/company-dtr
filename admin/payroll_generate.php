@@ -32,7 +32,8 @@
 			$contents .= '
 			<tr>
 				<td>'.$row['lastname'].', '.$row['firstname'].'</td>
-				<td>'.$row['employee_id'].'</td>
+				<td align="right">'.number_format($cashadvance, 2).'</td>
+				<td align="right">'.number_format($cashadvance, 2).'</td>
 				<td align="right">'.number_format($cashadvance, 2).'</td>
 				<td align="right">'.number_format($salesaprdeduc, 2).'</td>
 				<td align="right">'.number_format($salescount).'</td>
