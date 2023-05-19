@@ -25,6 +25,24 @@ $dempid= mysqli_query($conn,$qempid);
             <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
         <?php endwhile; ?>
     </select>
+	<script>
+    // Get the dropdown element
+    var dropdown = document.getElementById("empid");
+
+    // Store the current selected value
+    var selectedValue = dropdown.value;
+
+    // Listen for the change event on the dropdown
+    dropdown.addEventListener("change", function() {
+        // Update the selectedValue with the new selected value
+        selectedValue = this.value;
+    });
+
+    // Function to get the selected value
+    function getSelectedValue() {
+        return selectedValue;
+    }
+</script>
 </div>
 
 
