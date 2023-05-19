@@ -1,3 +1,8 @@
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Bootstrap JavaScript library -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <!-- jQuery 3 -->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -117,6 +122,9 @@ $(function(){
 });
 
 
+
+
+<!-- Include your custom JavaScript code -->
     // Get the dropdown element
     var dropdown = document.getElementById("empid");
 
