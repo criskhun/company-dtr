@@ -165,7 +165,8 @@ $dempid= mysqli_query($conn,$qempid);
         } else {
             // If nothing is selected, reset the dropdown value and employee name
             dropdown.value = "";
-            document.getElementById("employee_name").textContent = "";
+			document.getElementById("employee_name").textContent = employeeName;
+            // document.getElementById("employee_name").textContent = "";
         }
     }
 </script>
