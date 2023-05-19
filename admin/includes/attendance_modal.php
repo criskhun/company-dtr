@@ -19,14 +19,15 @@ $dempid= mysqli_query($conn,$qempid);
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 					  <div class="col-sm-9">
-					  <select class="form-control" id="empname" name="empname" onchange="updateEmployeeID(this.value)" required>
+					  <input type="hidden" class="form-control" id="newid" name="newid">
+
+<select class="form-control" id="empname" name="empname" onchange="updateEmployeeID(this.value)" required>
     <option value="" selected disabled>- Select Employee Name -</option>
     <?php while($row1 = mysqli_fetch_array($dempid)):;?>
         <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
     <?php endwhile; ?>
 </select>
 
-<input type="text" class="form-control" id="empid" name="empid" readonly>
 </div>
 
 
@@ -146,9 +147,9 @@ $dempid= mysqli_query($conn,$qempid);
 
 <script>
     function updateEmployeeID(employeeID) {
-        var empIDInput = document.getElementById("empid");
+        var newIDInput = document.getElementById("newid");
 
-        // Assign the selected employee ID to the text field value
-        empIDInput.value = employeeID;
+        // Assign the selected employee ID to the hidden input field value
+        newIDInput.value = employeeID;
     }
 </script>
