@@ -21,12 +21,12 @@ $dempid= mysqli_query($conn,$qempid);
 					  <div class="col-sm-9">
 					  <!-- <input type="hidden" class="form-control" id="newid" name="newid"> -->
 
-<select class="form-control" id="newid" name="newid" onchange="updateEmployeeID(this.value)" required>
-    <option value="" selected disabled>- Select Employee Name -</option>
-    <?php while($row1 = mysqli_fetch_array($dempid)):;?>
-        <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
-    <?php endwhile; ?>
-</select>
+					  <select class="form-control" id="newid" name="newid" onchange="updateEmployeeID(this.value)" required>
+					    <option value="" selected disabled>- Select Employee Name -</option>
+					    <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+					        <option value="<?php echo $row1['employee_id'].'|'.$row1['firstname'].' '.$row1['lastname'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+					    <?php endwhile; ?>
+					  </select>
 
 </div>
 
@@ -147,9 +147,17 @@ $dempid= mysqli_query($conn,$qempid);
 
 <script>
     function updateEmployeeID(employeeID) {
-        var newIDInput = document.getElementById("newid");
+        var dropdown = document.getElementById("newid");
 
-        // Assign the selected employee ID to the hidden input field value
-        newIDInput.value = employeeID;
+        // Split the value to get the employee ID and name
+        var values = employeeID.split("|");
+        var employeeID = values[0];
+        var employeeName = values[1];
+
+        // Assign the employee ID to the dropdown value
+        dropdown.value = employeeID;
+
+        // Update the employee name in the modal title
+        document.getElementById("employee_name").textContent = employeeName;
     }
 </script>
