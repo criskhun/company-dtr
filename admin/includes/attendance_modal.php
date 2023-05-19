@@ -146,9 +146,11 @@ $dempid= mysqli_query($conn,$qempid);
 </div>
 
 <script>
-    function updateEmployeeID(employeeID) {
-        var dropdown = document.getElementById("newid");
+function updateEmployeeID(employeeID) {
+    var dropdown = document.getElementById("newid");
 
+    // Check if a valid option is selected
+    if (employeeID) {
         // Split the value to get the employee ID and name
         var values = employeeID.split("|");
         var employeeID = values[0];
@@ -159,5 +161,11 @@ $dempid= mysqli_query($conn,$qempid);
 
         // Update the employee name in the modal title
         document.getElementById("employee_name").textContent = employeeName;
+    } else {
+        // If nothing is selected, reset the dropdown value and employee name
+        dropdown.value = "";
+        document.getElementById("employee_name").textContent = "";
     }
+}
+
 </script>
