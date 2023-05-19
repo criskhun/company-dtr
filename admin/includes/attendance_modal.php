@@ -146,21 +146,9 @@ $dempid= mysqli_query($conn,$qempid);
 
 <script>
     function updateEmployeeID(employeeID) {
-        var empIDSelect = document.getElementById("empid");
-        empIDSelect.innerHTML = ""; // Clear previous options
+        var empIDInput = document.getElementById("empid");
 
-        // Make an AJAX request to fetch employee ID based on the selected employee name
-        // Here, you can use a PHP script or an API endpoint to retrieve the employee ID
-
-        // Example AJAX request using jQuery
-        $.ajax({
-            url: "getEmployeeID.php",
-            method: "POST",
-            data: { employeeID: employeeID },
-            success: function(response) {
-                // Populate the employee ID dropdown with the retrieved values
-                empIDSelect.innerHTML = response;
-            }
-        });
+        // Assign the selected employee ID to the text field value
+        empIDInput.value = employeeID;
     }
 </script>
