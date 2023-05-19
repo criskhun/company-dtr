@@ -19,12 +19,16 @@ $dempid= mysqli_query($conn,$qempid);
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 					  <div class="col-sm-9">
-    <select class="form-control" id="empid" name="empid" required>
-        <option value="" selected disabled>- Select Employee Name -</option>
-        <?php while($row1 = mysqli_fetch_array($dempid)):;?>
-            <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
-        <?php endwhile; ?>
-    </select>
+					  <select class="form-control" id="empname" name="empname" onchange="updateEmployeeID(this.value)" required>
+    <option value="" selected disabled>- Select Employee Name -</option>
+    <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+        <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+    <?php endwhile; ?>
+</select>
+
+<select class="form-control" id="empid" name="empid" required>
+    <option value="" selected disabled>- Select Employee ID -</option>
+</select>
 </div>
 
 
@@ -141,3 +145,24 @@ $dempid= mysqli_query($conn,$qempid);
         </div>
     </div>
 </div>
+
+<script>
+    function updateEmployeeID(employeeID) {
+        var empIDSelect = document.getElementById("empid");
+        empIDSelect.innerHTML = ""; // Clear previous options
+
+        // Make an AJAX request to fetch employee ID based on the selected employee name
+        // Here, you can use a PHP script or an API endpoint to retrieve the employee ID
+
+        // Example AJAX request using jQuery
+        $.ajax({
+            url: "getEmployeeID.php",
+            method: "POST",
+            data: { employeeID: employeeID },
+            success: function(response) {
+                // Populate the employee ID dropdown with the retrieved values
+                empIDSelect.innerHTML = response;
+            }
+        });
+    }
+</script>
