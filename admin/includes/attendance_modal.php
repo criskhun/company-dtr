@@ -160,3 +160,5 @@ $dempid= mysqli_query($conn,$qempid);
         return selectedValue;
     }
 </script>
+</body>
+</html>
