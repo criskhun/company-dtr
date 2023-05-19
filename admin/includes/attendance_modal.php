@@ -20,7 +20,7 @@ $dempid= mysqli_query($conn,$qempid);
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 					  <div class="col-sm-9">
     <select class="form-control" id="empid" name="empid" required>
-        <option value="" selected disabled>- Select Employee Name NEW -</option>
+        <option value="" selected disabled>- Select Employee Name -</option>
         <?php while($row1 = mysqli_fetch_array($dempid)):;?>
             <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
         <?php endwhile; ?>
@@ -141,3 +141,22 @@ $dempid= mysqli_query($conn,$qempid);
         </div>
     </div>
 </div>
+
+<script>
+    // Get the dropdown element
+    var dropdown = document.getElementById("empid");
+
+    // Store the current selected value
+    var selectedValue = dropdown.value;
+
+    // Listen for the change event on the dropdown
+    dropdown.addEventListener("change", function() {
+        // Update the selectedValue with the new selected value
+        selectedValue = this.value;
+    });
+
+    // Function to get the selected value
+    function getSelectedValue() {
+        return selectedValue;
+    }
+</script>
