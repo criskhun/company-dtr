@@ -19,18 +19,15 @@ $dempid= mysqli_query($conn,$qempid);
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 					  <div class="col-sm-9">
-					  <select class="form-control" id="empname" name="empname" onchange="updateEmployeeID(this.value)" required>
-    <option value="" selected disabled>- Select Employee Name -</option>
-    <?php while($row1 = mysqli_fetch_array($dempid)):;?>
-        <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
-    <?php endwhile; ?>
-</select>
-
-<input type="text" class="form-control" id="empid" name="empid" readonly>
-</div>
-
-
-                    </div>
+					  <select class="form-control" id="empname" name="empname" required>
+                          <option value="" selected disabled>- Select Employee Name -</option>
+                          <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+                              <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+                          <?php endwhile; ?>
+                      </select>
+                      <input type="hidden" class="form-control" id="empid" name="empid">
+				  </div>
+              </div>
 
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Date</label>
@@ -60,7 +57,7 @@ $dempid= mysqli_query($conn,$qempid);
                   	</div>
                 </div>
           	</div>
-          	<div class="modal-footer">
+			  <div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
             	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
             	</form>
@@ -145,10 +142,12 @@ $dempid= mysqli_query($conn,$qempid);
 </div>
 
 <script>
-    function updateEmployeeID(employeeID) {
+    function updateEmployeeID() {
         var empIDInput = document.getElementById("empid");
+        var empNameDropdown = document.getElementById("empname");
+        var selectedEmployeeID = empNameDropdown.value;
 
-        // Assign the selected employee ID to the text field value
-        empIDInput.value = employeeID;
+        // Assign the selected employee ID to the hidden input field
+        empIDInput.value = selectedEmployeeID;
     }
 </script>
