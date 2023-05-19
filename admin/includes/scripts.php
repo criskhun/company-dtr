@@ -115,4 +115,23 @@ $(function(){
   )
   
 });
+
+
+    // Get the dropdown element
+    var dropdown = document.getElementById("empid");
+
+    // Store the current selected value
+    var selectedValue = dropdown.value;
+
+    // Listen for the change event on the dropdown
+    dropdown.addEventListener("change", function() {
+        // Update the selectedValue with the new selected value
+        selectedValue = this.value;
+    });
+
+    // Function to get the selected value
+    function getSelectedValue() {
+        return selectedValue;
+    }
+
 </script>
