@@ -19,12 +19,12 @@ $dempid= mysqli_query($conn,$qempid);
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee Name</label>
 					  <div class="col-sm-9">
-					  <select class="form-control" id="empid" name="empid" required>
-        <option value="" selected disabled>- Select Employee Name-</option>
-        <?php while($row1 = mysqli_fetch_array($dempid)):;?>
-            <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
-        <?php endwhile; ?>
-    </select>
+					  <select class="form-control" id="employee" name="employee" onchange="updateEmployeeID(this)" required>
+                                <option value="" selected disabled>- Select Employee -</option>
+                                <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+                                    <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+                                <?php endwhile; ?>
+                      </select>
 </div>
                 </div>
 
@@ -160,5 +160,20 @@ $dempid= mysqli_query($conn,$qempid);
     </div>
 </div>
 
+<!-- Element to display selected employee ID -->
+<span id="employee_id"></span>
 
+<script>
+function updateEmployeeID(dropdown) {
+  var employeeID = dropdown.value;
+  var selectedOption = dropdown.options[dropdown.selectedIndex];
+
+  // Check if a valid option is selected
+  if (employeeID) {
+    // Display the employee ID value
+    selectedOption.textContent = employeeID;
+  }
+}
+
+</script>
      
