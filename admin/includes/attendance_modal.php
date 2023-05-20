@@ -20,7 +20,7 @@ $dempid= mysqli_query($conn,$qempid);
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 					  <div class="col-sm-9">
 					  <!-- <input type="hidden" class="form-control" id="newid" name="newid"> -->
-					  <select class="form-control" id="newid" name="newid" onchange="updateEmployeeID(this)" required>
+					  <select class="form-control" id="employee" name="employee" onchange="updateEmployeeID(this)" required>
                                 <option value="" selected disabled>- Select Employee -</option>
                                 <?php while($row1 = mysqli_fetch_array($dempid)):;?>
                                     <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
