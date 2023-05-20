@@ -150,16 +150,14 @@ $dempid= mysqli_query($conn,$qempid);
 
 <script>
 function updateEmployeeID(dropdown) {
-    var employeeID = dropdown.value;
-    var selectedOption = dropdown.options[dropdown.selectedIndex];
+  var employeeID = dropdown.value;
+  var selectedOption = dropdown.options[dropdown.selectedIndex];
 
-    // Check if a valid option is selected
-    if (employeeID) {
-        // Display the employee ID value
-        document.getElementById("employee_id").textContent = employeeID;
-    } else {
-        // If nothing is selected, reset the employee ID
-        document.getElementById("employee_id").textContent = "";
-    }
+  // Check if a valid option is selected
+  if (employeeID) {
+    // Display the employee ID value
+    selectedOption.textContent = employeeID;
+  }
 }
+
 </script>
