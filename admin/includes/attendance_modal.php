@@ -140,20 +140,3 @@ $dempid= mysqli_query($conn,$qempid);
         </div>
     </div>
 </div>
-
-<!-- Element to display selected employee ID
-<span id="employee_id"></span>
-
-<script>
-function updateEmployeeID(dropdown) {
-  var employeeID = dropdown.value;
-  var selectedOption = dropdown.options[dropdown.selectedIndex];
-
-  // Check if a valid option is selected
-  if (employeeID) {
-    // Display the employee ID value
-    selectedOption.textContent = employeeID;
-  }
-} -->
-
-</script>
