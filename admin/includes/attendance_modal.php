@@ -1,8 +1,8 @@
 <?php 
 include 'conn.php'; 
 // $qempid = "select distinct employee_id from employees";
-$qempid = "select distinct employee_id, firstname, lastname from employees";
-$dempid= mysqli_query($conn,$qempid);
+$result = mysqli_query($connection, "SELECT * FROM employees");
+$dempid = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
 <!-- Add -->
@@ -165,8 +165,7 @@ $dempid= mysqli_query($conn,$qempid);
         } else {
             // If nothing is selected, reset the dropdown value and employee name
             dropdown.value = "";
-			document.getElementById("employee_name").textContent = employeeName;
-            // document.getElementById("employee_name").textContent = "";
+            document.getElementById("employee_name").textContent = "";
         }
     }
 </script>
