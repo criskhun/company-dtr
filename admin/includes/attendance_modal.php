@@ -20,13 +20,13 @@ $dempid= mysqli_query($conn,$qempid);
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 					  <div class="col-sm-9">
 					  <!-- <input type="hidden" class="form-control" id="newid" name="newid"> -->
-
 					  <select class="form-control" id="newid" name="newid" onchange="updateEmployeeID(this)" required>
-					    <option value="" selected disabled>- Select Employee Name -</option>
-					    <?php while($row1 = mysqli_fetch_array($dempid)):;?>
-					        <option value="<?php echo $row1['employee_id'].'|'.$row1['firstname'].' '.$row1['lastname'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
-					    <?php endwhile; ?>
-					  </select>
+    <option value="" selected disabled>- Select Employee -</option>
+    <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+        <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+    <?php endwhile; ?>
+</select>
+
 
 </div>
 
@@ -148,14 +148,10 @@ $dempid= mysqli_query($conn,$qempid);
 
 <script>
 function updateEmployeeID(dropdown) {
-    var selectedOption = dropdown.options[dropdown.selectedIndex];
+    var employeeID = dropdown.value;
 
     // Check if a valid option is selected
-    if (selectedOption && selectedOption.value) {
-        // Split the value to get the employee ID and name
-        var values = selectedOption.value.split("|");
-        var employeeID = values[0];
-
+    if (employeeID) {
         // Display the employee ID
         document.getElementById("employee_id").textContent = employeeID;
     } else {
