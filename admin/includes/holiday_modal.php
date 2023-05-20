@@ -173,7 +173,7 @@ function updateEmployeeID(dropdown) {
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function(){
-  $('#empid').change(function(){
+  $('#employee').change(function(){
     var empid = $(this).val();
     $.get('includes/get_rate.php?empid='+empid, function(data){
       $('#rate').val(data);
