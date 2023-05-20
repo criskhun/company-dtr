@@ -53,6 +53,7 @@
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th>Employee</th>
+                  <th>Employee Name</th>
                   <th>Holiday Type</th>
                   <th>No_Hours</th>
                   <th>Amount</th>
@@ -65,11 +66,13 @@
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
-                          <td>cris</td>
-                          <td>Regular</td>
-                          <td>8</td>
-                          <td>1800</td>
-                          <td>
+                        <td class='hidden'></td>
+                        <td>".date('M d, Y', strtotime($row['date']))."</td>
+                        <td>".$row['empid']."</td>
+                        <td>".$row['firstname'].' '.$row['lastname']."</td>
+                        <td>".date('h:i A', strtotime($row['time_in'])).$status."</td>
+                        <td>".date('h:i A', strtotime($row['time_out']))."</td>
+                        <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
                           </td>
