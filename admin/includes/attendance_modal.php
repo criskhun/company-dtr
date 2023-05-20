@@ -145,6 +145,8 @@ $dempid= mysqli_query($conn,$qempid);
     </div>
 </div>
 
+<!-- Element to display selected employee ID -->
+<span id="employee_id"></span>
 
 <script>
 function updateEmployeeID(dropdown) {
