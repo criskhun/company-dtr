@@ -15,9 +15,9 @@ $dempid= mysqli_query($conn,$qempid);
             	<h4 class="modal-title"><b>Rendered Holiday</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="attendance_add.php">
+            	<form class="form-horizontal" method="POST" action="holiday_add.php">
           		  <div class="form-group">
-                  	<label for="employee" class="col-sm-3 control-label">Employee Name</label>
+                  	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 					  <div class="col-sm-9">
 					  <select class="form-control" id="employee" name="employee" onchange="updateEmployeeID(this)" required>
                                 <option value="" selected disabled>- Select Employee -</option>
@@ -47,18 +47,12 @@ $dempid= mysqli_query($conn,$qempid);
                     	<input type="text" class="form-control" id="hours" name="hours">
                   	</div>
                 </div>
-                <!-- <div class="form-group">
-                  	<label for="mins" class="col-sm-3 control-label">No. of Mins</label>
 
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="mins" name="mins">
-                  	</div>
-                </div> -->
 				<div class="form-group">
                   	<label for="hours" class="col-sm-3 control-label">Amount Paid</label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="hours" name="hours">
+                    	<input type="text" class="form-control" id="amount" name="amount">
                   	</div>
                 </div>
 				
@@ -66,7 +60,6 @@ $dempid= mysqli_query($conn,$qempid);
                     <label for="rate" class="col-sm-3 control-label">Per Hour Rate</label>
 
                     <div class="col-sm-9">
-                      <!-- <input type="text" class="form-control" id="rate" name="rate" required> -->
 					  <input type="text" class="form-control" id="rate" name="rate" readonly>
                     </div>
                 </div>
@@ -104,7 +97,7 @@ $dempid= mysqli_query($conn,$qempid);
             	<h4 class="modal-title"><b>Update Schedule</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="schedule_edit.php">
+            	<form class="form-horizontal" method="POST" action="holiday_edit.php">
             		<input type="hidden" id="timeid" name="id">
                 <div class="form-group">
                     <label for="edit_time_in" class="col-sm-3 control-label">Time In</label>
@@ -144,7 +137,7 @@ $dempid= mysqli_query($conn,$qempid);
             	<h4 class="modal-title"><b>Deleting...</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="schedule_delete.php">
+            	<form class="form-horizontal" method="POST" action="holiday_delete.php">
             		<input type="hidden" id="del_timeid" name="id">
             		<div class="text-center">
 	                	<p>DELETE SCHEDULE</p>

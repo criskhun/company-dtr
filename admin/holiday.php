@@ -60,7 +60,7 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT * FROM schedules";
+                    $sql = "SELECT * FROM holiday";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       echo "
