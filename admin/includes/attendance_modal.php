@@ -20,12 +20,12 @@ $dempid= mysqli_query($conn,$qempid);
                   	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
 					  <div class="col-sm-9">
 					  <!-- Finally nakuha na nako ang onchange event yess! fuck -->
-					  <select class="form-control" id="employee" name="employee" onchange="updateEmployeeID(this)" required>
-                                <option value="" selected disabled>- Select Employee -</option>
-                                <?php while($row1 = mysqli_fetch_array($dempid)):;?>
-                                    <option value="<?php echo $row1['employee_id'];?>"><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
-                                <?php endwhile; ?>
-                      </select>
+					  <select class="form-control" id="employee" name="employee" required>
+        <option value="" selected disabled>- Select Employee Name-</option>
+        <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+            <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+        <?php endwhile; ?>
+    </select>
 					</div>
 				</div>
 
@@ -141,7 +141,7 @@ $dempid= mysqli_query($conn,$qempid);
     </div>
 </div>
 
-<!-- Element to display selected employee ID -->
+<!-- Element to display selected employee ID
 <span id="employee_id"></span>
 
 <script>
@@ -154,6 +154,6 @@ function updateEmployeeID(dropdown) {
     // Display the employee ID value
     selectedOption.textContent = employeeID;
   }
-}
+} -->
 
 </script>
