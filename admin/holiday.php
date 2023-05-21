@@ -67,10 +67,10 @@
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
-                        <td class='hidden'></td>
                         <td>".$row['employee_id']."</td>
                         <td>".$row['firstname'].' '.$row['lastname']."</td>
                         <td>".$row['hol_type']."</td>
+                        <td>".number_format($row['hours'], 2)."</td>
                         <td>".number_format($row['amount'], 2)."</td>
                         <td>".date('M d, Y', strtotime($row['date']))."</td>
                         <td>
