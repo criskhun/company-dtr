@@ -128,14 +128,6 @@ $dempid= mysqli_query($conn,$qempid);
                     	<input type="text" class="form-control" id="amount" name="amount">
                   	</div>
                 </div>
-				
-                 <div class="form-group">
-                    <label for="rate" class="col-sm-3 control-label">Per Hour Rate</label>
-
-                    <div class="col-sm-9">
-					  <input type="text" class="form-control" id="rate" name="rate" readonly>
-                    </div>
-                </div>
 
 				<div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Date</label>
