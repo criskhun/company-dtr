@@ -99,7 +99,7 @@ $dempid= mysqli_query($conn,$qempid);
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="holiday_edit.php">
                 
-
+              <input type="hidden" class="holid" name="id">
 
 <div class="form-group">
     <label for="holiday-type" class="col-sm-3 control-label">Holiday Type</label>
@@ -169,10 +169,10 @@ $dempid= mysqli_query($conn,$qempid);
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="holiday_delete.php">
-            		<input type="hidden" id="del_timeid" name="id">
+            		<input type="hidden" id="del_holid" name="id">
             		<div class="text-center">
 	                	<p>DELETE SCHEDULE</p>
-	                	<h2 id="del_schedule" class="bold"></h2>
+	                	<h2 id="del_holiday" class="bold"></h2>
 	            	</div>
           	</div>
           	<div class="modal-footer">

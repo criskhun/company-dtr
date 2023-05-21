@@ -114,15 +114,17 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'schedule_row.php',
+    url: 'holiday_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('#timeid').val(response.id);
-      $('#edit_time_in').val(response.time_in);
-      $('#edit_time_out').val(response.time_out);
-      $('#del_timeid').val(response.id);
-      $('#del_schedule').html(response.time_in+' - '+response.time_out);
+      $('.holid').val(response.id);
+      $('#employee').val(response.employee);
+      $('#amount').val(response.amount);
+      $('#holiday-type').val(response.holiday-type);
+      $('#hours').val(response.hours);
+      $('#rate').val(response.rate);
+      $('#del_holid').html(response.employee);
     }
   });
 }
