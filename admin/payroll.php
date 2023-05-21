@@ -53,7 +53,7 @@
             <div class="box-header with-border">
               <div class="pull-left">
 
-              <button type="button" class="btn btn-success btn-sm btn-flat" href="#addnewpay" data-toggle="modal">
+              <!-- <button type="button" class="btn btn-success btn-sm btn-flat" href="#addnewpay" data-toggle="modal"> -->
 
               <!-- <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a> -->
 
