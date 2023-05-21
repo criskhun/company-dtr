@@ -106,6 +106,54 @@ $dempid= mysqli_query($conn,$qempid);
         <?php endwhile; ?>
     </select>
 </div>
+
+<div class="form-group">
+    <label for="holiday-type" class="col-sm-3 control-label">Holiday Type</label>
+    <div class="col-sm-9">
+        <select class="form-control" id="holiday-type" name="holiday-type" required>
+            <option value="" selected disabled>- Select Holiday Type -</option>
+            <option value="regular">Regular Holiday</option>
+            <option value="special">Special Holiday</option>
+        </select>
+    </div>
+</div>
+
+             
+                <div class="form-group">
+                  	<label for="hours" class="col-sm-3 control-label">No. of Hours</label>
+
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="hours" name="hours">
+                  	</div>
+                </div>
+
+				<div class="form-group">
+                  	<label for="hours" class="col-sm-3 control-label">Amount Paid</label>
+
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="amount" name="amount">
+                  	</div>
+                </div>
+				
+                 <div class="form-group">
+                    <label for="rate" class="col-sm-3 control-label">Per Hour Rate</label>
+
+                    <div class="col-sm-9">
+					  <input type="text" class="form-control" id="rate" name="rate" readonly>
+                    </div>
+                </div>
+
+				<div class="form-group">
+                    <label for="datepicker_add" class="col-sm-3 control-label">Date</label>
+
+                    <div class="col-sm-9"> 
+                      <div class="date">
+                        <input type="text" class="form-control" id="datepicker_add" name="date" required>
+                      </div>
+                    </div>
+                </div>
+				
+
           	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
