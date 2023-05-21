@@ -3,7 +3,7 @@
 
 	if(isset($_POST['add'])){
 		$employee = $_POST['employee'];
-        $hol_type = $_POST['hol-type'];
+        $hol_type = $_POST['holiday-type'];
 		$amount = $_POST['amount'];
         $hours = $_POST['hours'];
         $per_hr_rate = $_POST['rate'];
