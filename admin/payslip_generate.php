@@ -33,10 +33,10 @@
 
 	
 
-	$sql = "SELECT *, SUM(num_hr) AS total_hr, SUM(sales.amount) AS totalsales, attendance.employee_id AS empid, employees.employee_id AS employee FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND position.description NOT IN ('UNIT MANAGER','ACCOUNT EXECUTIVE') GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
-
+	$sql = "SELECT *, SUM(num_hr) AS total_hr, SUM(sales.amount) AS totalsales, attendance.employee_id AS empid, employees.employee_id AS employee, COALESCE(overtime.total_hours, 0) AS overtime_hours, COALESCE(overtime.total_hours * overtime.rate, 0) AS overtime_payment FROM attendance LEFT JOIN employees ON employees.id = attendance.employee_id LEFT JOIN position ON position.id = employees.position_id LEFT JOIN sales ON sales.employee_id = employees.employee_id LEFT JOIN ( SELECT employee_id, SUM(hours) AS total_hours, rate FROM overtime WHERE date_overtime BETWEEN '$from' AND '$to' GROUP BY employee_id ) AS overtime ON overtime.employee_id = employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND position.description NOT IN ('UNIT MANAGER', 'ACCOUNT EXECUTIVE') GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
+    $holiday = "SELECT SUM(amount) AS total_pay from holiday";
 	$query = $conn->query($sql);
-
+	
 	
 	while($row = $query->fetch_assoc()){
 		$empid = $row['empid'];
@@ -53,9 +53,15 @@
 		  $sarow = $saquery->fetch_assoc();
 		  $salesaprdeduc = $sarow['aprdeduc'];
 
-		$gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
-		$total_deduction = $deduction + $cashadvance + $salesaprdeduc;
-  		$net = $gross - $total_deduction;
+		  $allowance = "SELECT SUM(amount) from allowance";
+
+		  $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'] + $allowance;
+		  $sss = 0.0363 * $gross;
+		  $pagibig = 0.02 * $gross;
+		  $philhealth = 100;
+		  $tax = 0.05 * ($gross - 20000);
+		  $total_deduction = $deduction + $cashadvance + $salesaprdeduc + $sss + $pagibig + $tax;
+		  $net = $gross - $total_deduction;
 
 		  
 
@@ -95,13 +101,13 @@
 				<td width="25%" align="right">Regular Pay/RPH: </td>
 				<td>'.number_format($row['rate'], 2).'</td>
 				<td width="25%" align="right">Holiday Pay: </td>
-				<td>nnnnn</td>
+				<td>'.number_format($holiday, 2).'</td>
 			</tr>
 			<tr>
 				<td width="25%" align="right">Total Hours: </td>
 				<td>'.number_format($row['total_hr'], 2).'</td>
 				<td width="25%" align="right">Overtime: </td>
-				<td>nnnnn</td>
+				<td>'.number_format($row['overtime_payment'], 2).'</td>
 			</tr>
 			
 			<tr>
@@ -115,15 +121,15 @@
 			
 			<tr>
 				<td width="25%" align="right">SSS: </td>
-				<td>nnnn</td>
+				<td>'.number_format($sss, 2).'</td>
 				<td width="25%" align="right">PHILHEALTH: </td>
-				<td>nnnnn</td>
+				<td>'.number_format($philhealth, 2).'</td>
 			</tr>
 			<tr>
 				<td width="25%" align="right">PAG-IBIG: </td>
-				<td>nnnnn</td>
+				<td>'.number_format($pagibig, 2).'</td>
 				<td width="25%" align="right">TAX: </td>
-				<td>nnnnn</td>
+				<td>'.number_format($tax, 2).'</td>
 			</tr>
 			<tr>
 				<td width="25%" align="right"><b>Total Mandatory Deduction: </b></td>
@@ -134,9 +140,9 @@
 			<h5 align="center">BASIC</h5>
 			<tr>
 				<td width="25%" align="right">Leave/Absent: </td>
-				<td>nnnnn</td>
+				<td>'.number_format(0, 2).'</td>
 				<td width="25%" align="right">Undertime: </td>
-				<td>nnnnn</td>
+				<td>'.number_format($row['overtime_payment'], 2).'</td>
 			</tr>
 			<tr>
 				<td width="25%" align="right">Cash Advance: </td>
@@ -153,7 +159,7 @@
 			<h5 align="center">-----------------------------------------------------------------------------NET PAY-----------------------------------------------------------------------------</h5>
 			<tr>
 				<td width="25%" align="right"><b>Allowance: </b></td>
-				<td>nnnnn</td>
+				<td>'.number_format($allowance, 2).'</td>
 				<td width="25%" align="right">NET Pay: </td>
 				<td><b>'.number_format($net, 2).'</b></td>
 			</tr>
