@@ -190,6 +190,36 @@ $dtype = mysqli_query($conn,$qtype);
                       <input type="password" class="form-control" id="password" name="password" placeholder="<?php echo $user['password']; ?>">
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">SSS Number</label>
+
+                    <div class="col-sm-9"> 
+                    <input type="text" class="form-control" id="sssno" name="sssno" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Philhealth Number</label>
+
+                    <div class="col-sm-9"> 
+                    <input type="text" class="form-control" id="philno" name="philno" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Pagibig Number</label>
+
+                    <div class="col-sm-9"> 
+                    <input type="text" class="form-control" id="pagibigno" name="pagibigno" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">BIR Tin Number</label>
+
+                    <div class="col-sm-9"> 
+                    <input type="text" class="form-control" id="tinno" name="tinno" required>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="edit_address" class="col-sm-3 control-label">Address</label>
 
