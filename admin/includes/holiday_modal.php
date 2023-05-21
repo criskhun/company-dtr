@@ -163,7 +163,7 @@ $dempid= mysqli_query($conn,$qempid);
             	<form class="form-horizontal" method="POST" action="holiday_delete.php">
             		<input type="hidden" id="del_holid" name="id">
             		<div class="text-center">
-	                	<p>DELETE SCHEDULE</p>
+	                	<p>DELETE HOLIDAY?</p>
 	                	<h2 id="del_holiday" class="bold"></h2>
 	            	</div>
           	</div>
