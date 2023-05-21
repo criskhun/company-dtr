@@ -129,7 +129,7 @@
                       $philhealth = 100;
                       $tax = 0.05 * ($gross - 20000);
                       $total_deduction = $deduction + $cashadvance + $salesaprdeduc + $sss + $pagibig + $tax;
-                      $net = $total_deduction - $gross;
+                      $net = $gross - ($deduction + $cashadvance + $sss + $pagibig + $tax);
 
                       echo "
                         <tr>
