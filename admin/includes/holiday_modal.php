@@ -130,11 +130,11 @@ $dempid= mysqli_query($conn,$qempid);
                 </div>
 
 				<div class="form-group">
-                    <label for="datepicker_add" class="col-sm-3 control-label">Date</label>
+                    <label for="datepicker_edit" class="col-sm-3 control-label">Date</label>
 
                     <div class="col-sm-9"> 
                       <div class="date">
-                        <input type="text" class="form-control" id="datepicker_add" name="date" required>
+                        <input type="text" class="form-control" id="datepicker_edit" name="date" required>
                       </div>
                     </div>
                 </div>
