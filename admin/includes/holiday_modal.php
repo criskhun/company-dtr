@@ -94,29 +94,18 @@ $dempid= mysqli_query($conn,$qempid);
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Update Schedule</b></h4>
+            	<h4 class="modal-title"><b>Update Holiday</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="holiday_edit.php">
-            		<input type="hidden" id="timeid" name="id">
-                <div class="form-group">
-                    <label for="edit_time_in" class="col-sm-3 control-label">Time In</label>
-
-                    <div class="col-sm-9">
-                      <div class="bootstrap-timepicker">
-                        <input type="text" class="form-control timepicker" id="edit_time_in" name="time_in">
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_time_out" class="col-sm-3 control-label">Time out</label>
-
-                    <div class="col-sm-9">
-                      <div class="bootstrap-timepicker">
-                        <input type="text" class="form-control timepicker" id="edit_time_out" name="time_out">
-                      </div>
-                    </div>
-                </div>
+              <div class="col-sm-9">
+					  <select class="form-control" id="employee" name="employee" required>
+        <option value="" selected disabled>- Select Employee Name-</option>
+        <?php while($row1 = mysqli_fetch_array($dempid)):;?>
+            <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
+        <?php endwhile; ?>
+    </select>
+</div>
           	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
