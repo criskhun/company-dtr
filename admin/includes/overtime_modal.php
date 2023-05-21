@@ -15,11 +15,11 @@ $dempid= mysqli_query($conn,$qempid);
             	<h4 class="modal-title"><b>Add Overtime</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="attendance_add.php">
+            	<form class="form-horizontal" method="POST" action="overtime_add.php">
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee Name</label>
 					  <div class="col-sm-9">
-    <select class="form-control" id="empid" name="empid" required>
+    <select class="form-control" id="employee" name="employee" required>
         <option value="" selected disabled>- Select Employee Name-</option>
         <?php while($row1 = mysqli_fetch_array($dempid)):;?>
             <option value="<?php echo $row1['employee_id'];?>" ><?php echo $row1['firstname'].' '.$row1['lastname'];?></option>
@@ -43,18 +43,11 @@ $dempid= mysqli_query($conn,$qempid);
                     	<input type="text" class="form-control" id="hours" name="hours">
                   	</div>
                 </div>
-                <!-- <div class="form-group">
-                  	<label for="mins" class="col-sm-3 control-label">No. of Mins</label>
 
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="mins" name="mins">
-                  	</div>
-                </div> -->
                  <div class="form-group">
                     <label for="rate" class="col-sm-3 control-label">Rate</label>
 
                     <div class="col-sm-9">
-                      <!-- <input type="text" class="form-control" id="rate" name="rate" required> -->
 					  <input type="text" class="form-control" id="rate" name="rate" readonly>
                     </div>
                 </div>
@@ -96,13 +89,7 @@ $dempid= mysqli_query($conn,$qempid);
                       <input type="text" class="form-control" id="hours_edit" name="hours">
                     </div>
                 </div>
-                <!-- <div class="form-group">
-                    <label for="mins_edit" class="col-sm-3 control-label">No. of Mins</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="mins_edit" name="mins">
-                    </div>
-                </div> -->
+                
                  <div class="form-group">
                     <label for="rate_edit" class="col-sm-3 control-label">Rate</label>
 
