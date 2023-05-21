@@ -98,7 +98,10 @@ $dempid= mysqli_query($conn,$qempid);
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="holiday_edit.php">
-              <div class="col-sm-9">
+                
+              <div class="form-group">
+                  	<label for="employee" class="col-sm-3 control-label">Employee ID</label>
+					  <div class="col-sm-9">
 					  <select class="form-control" id="employee" name="employee" required>
         <option value="" selected disabled>- Select Employee Name-</option>
         <?php while($row1 = mysqli_fetch_array($dempid)):;?>
@@ -106,6 +109,7 @@ $dempid= mysqli_query($conn,$qempid);
         <?php endwhile; ?>
     </select>
 </div>
+                </div>
 
 <div class="form-group">
     <label for="holiday-type" class="col-sm-3 control-label">Holiday Type</label>
