@@ -67,6 +67,7 @@
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
+                        <td class='hidden'></td>
                         <td>".$row['employee_id']."</td>
                         <td>".$row['firstname'].' '.$row['lastname']."</td>
                         <td>".$row['hol_type']."</td>
