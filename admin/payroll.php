@@ -90,7 +90,7 @@
                     $query = $conn->query($sql);
                     $drow = $query->fetch_assoc();
                     $deduction = $drow['total_amount'];
-  
+   
                     
                     $to = date('Y-m-d');
                     $from = date('Y-m-d', strtotime('-30 day', strtotime($to)));
@@ -102,14 +102,14 @@
                       $to = date('Y-m-d', strtotime($ex[1]));
                     }
 
-                    $sql = "SELECT *, SUM(num_hr) AS total_hr,  SUM(sales.amount) AS totalsales, attendance.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND position.description IN ('ADMIN STAFF','TELE') GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
+                    $sql = "SELECT *, SUM(num_hr) AS total_hr,  SUM(sales.amount) AS totalsales, attendance.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND position.description IN ('ADMIN STAFF','CREW', 'UNIT MANAGER') GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
 
                     $query = $conn->query($sql);
                     $total = 0;
                     while($row = $query->fetch_assoc()){
                       $empid = $row['empid'];
                       
-                      $casql = "SELECT *, SUM(amount)+ SUM(sss)+ SUM(pagibig)+ SUM(philhealth) AS cashamount FROM cashadvance WHERE employee_id='$empid' AND date_advance BETWEEN '$from' AND '$to' group by amount,sss,pagibig,philhealth";
+                      $casql = "SELECT *, SUM(amount)+ SUM(sss)+ SUM(pagibig)+ SUM(philhealth)+ SUM(tax) AS cashamount FROM cashadvance WHERE employee_id='$empid' AND date_advance BETWEEN '$from' AND '$to' group by amount,sss,pagibig,philhealth,tax";
                       
                       $salesdeduct = "SELECT sa.*, SUM(sa.approvededuction) AS aprdeduc FROM sales sa LEFT JOIN employees es ON es.employee_id = sa.employee_id WHERE es.id='$empid' and status = 'Approved' AND sa.salesdate BETWEEN '$from' AND '$to' group by approvededuction";
 
