@@ -51,16 +51,16 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <div class="pull-left">
+              <!-- <div class="pull-left"> -->
 
               <!-- <button type="button" class="btn btn-success btn-sm btn-flat" href="#addnewpay" data-toggle="modal"> -->
 
               <!-- <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a> -->
 
-                <span  class="glyphicon glyphicon-pencil"></span> Create Payroll</button>
+                <!-- <span  class="glyphicon glyphicon-pencil"></span> Create Payroll</button> -->
                 
                 
-              </div>
+              <!-- </div> -->
               <div class="pull-right">
                 <form method="POST" class="form-inline" id="payForm">
                   <div class="input-group">
