@@ -132,10 +132,10 @@ function getRow(id){
       $('#edit_firstname').val(response.firstname);
       $('#edit_lastname').val(response.lastname);
       $('#edit_address').val(response.address);
-      $('#sssno').val(response.sssno);
-      $('#philno').val(response.philno);
-      $('#pagibigno').val(response.pagibigno);
-      $('#tinno').val(response.tinno);
+      $('#edit_sssno').val(response.sssno);
+      $('#edit_philno').val(response.philno);
+      $('#edit_pagibigno').val(response.pagibigno);
+      $('#edit_tinno').val(response.tinno);
       $('#datepicker_edit').val(response.birthdate);
       $('#edit_contact').val(response.contact_info);
       $('#gender_val').val(response.gender).html(response.gender);
