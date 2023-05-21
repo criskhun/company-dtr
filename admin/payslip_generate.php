@@ -79,15 +79,15 @@
 			</tr>
 			<tr>
 				<td width="25%" align="right">SSS No.:</td>
-				<td>nnn-nnnn-nnnnn</td>
+				<td>'.$row['sssno'].'</td>
 				<td width="25%" align="right">PHILHEALTH No.: </td>
-				<td>nnn-nnnn-nnnnn</td> 
+				<td>'.$row['pagibigno'].'</td> 
 			</tr>
 			<tr>
 				<td width="25%" align="right">PAG-IBIG No.:</td>
-				<td>nnn-nnnn-nnnnn</td>
+				<td>'.$row['pagibigno'].'</td>
 				<td width="25%" align="right">TIN No.: </td>
-				<td>nnn-nnnn-nnnnn</td> 
+				<td>'.$row['tinno'].'</td> 
 			</tr>
 			<h5 align="center">---------------------------------------------------------------------------EARNINGS---------------------------------------------------------------------------</h5>
 			
