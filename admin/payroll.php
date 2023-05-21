@@ -122,7 +122,11 @@
                       $salesaprdeduc = $sarow['aprdeduc'];
 
                       $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
-                      $total_deduction = $deduction + $cashadvance + $salesaprdeduc;
+                      $sss = 0.0363 * $gross;
+                      $pagibig = 0.02 * $gross;
+                      $philhealth = 100;
+                      $tax = 0.05 * ($gross - 20000);
+                      $total_deduction = $deduction + $cashadvance + $salesaprdeduc + $sss + $pagibig + $tax;
                       $net = $gross - $total_deduction;
 
                       echo "
