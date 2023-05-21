@@ -39,28 +39,28 @@ $dempid= mysqli_query($conn,$qempid);
                     <label for="sss" class="col-sm-3 control-label">SSS</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="sss" name="sss" required>
+                      <input type="text" class="form-control" id="sss" name="sss" value="0.00" required>
                     </div>
                 </div>
 				<div class="form-group">
                     <label for="pagibig" class="col-sm-3 control-label">Pagibig</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="pagibig" name="pagibig" required>
+                      <input type="text" class="form-control" id="pagibig" name="pagibig" value="0.00" required>
                     </div>
                 </div>
 				<div class="form-group">
                     <label for="philhealth" class="col-sm-3 control-label">Philhealth</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="philhealth" name="philhealth" required>
+                      <input type="text" class="form-control" id="philhealth" name="philhealth" value="0.00" required>
                     </div>
                 </div>
 				<div class="form-group">
                     <label for="tax" class="col-sm-3 control-label">Tax</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="tax" name="tax" required>
+                      <input type="text" class="form-control" id="tax" name="tax" value="0.00" required>
                     </div>
                 </div>
           	</div>

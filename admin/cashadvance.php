@@ -72,7 +72,7 @@
                       $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
                       $sss = 0.0363 * $gross;
                       $pagibig = 0.02 * $gross;
-                      $philhealth = 0.03 * $gross;
+                      $philhealth = 100;
                       $tax = 0.05 * ($gross - 20000);
                       // $tax = ($sss = 0 || $pagibig = 0 || $philhealth = 0) ? 0 : $tax = 0.05 * ($gross - 20000);
 
