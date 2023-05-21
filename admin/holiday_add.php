@@ -9,7 +9,7 @@
         $per_hr_rate = $_POST['rate'];
         $date = $_POST['date'];
 
-		$sql = "INSERT INTO holiday (employee_id, hol_type, hours, per_hr_rate, date) VALUES ('$employee','$hol_type','$amount','$hours','$per_hr_rate','$date')";
+		$sql = "INSERT INTO holiday (employee_id, hol_type, hours, per_hr_rate, amount, date) VALUES ('$employee','$hol_type','$hours','$amount','$per_hr_rate','$date')";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Holiday added successfully';
 		}
