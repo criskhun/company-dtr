@@ -42,12 +42,15 @@
               <?php endif; ?>
             </ul>
           </li>
+          <?php endif; ?>
           <?php if ($user['useraccess'] == 'ADMIN' || $user['useraccess'] == 'PAYROLL'): ?>
-            <li><a href="deduction.php"><i class="fa fa-file-text"></i> <span> Other Deductions</span></a></li>
-              <?php endif; ?>
+          <li><a href="deduction.php"><i class="fa fa-file-text"></i> <span> Other Deductions</span></a></li>
           <li><a href="allowance.php"><i class="fa fa-file-text"></i> <span> Allowances</span></a></li>
+          <?php endif; ?>
+          <?php if ($user['useraccess'] == 'ADMIN' || $user['useraccess'] == 'MANAGER'): ?>
           <li><a href="position.php"><i class="fa fa-suitcase"></i> <span>Employee Roles</span></a></li>
-        <?php endif; ?>
+          <?php endif; ?>
+
         <?php if ($user['useraccess'] == 'ADMIN' || $user['useraccess'] == 'MANAGER' || $user['useraccess'] == 'PAYROLL'): ?>
           <li class="header">PRINTABLES</li>
           <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Payroll</span></a></li>
