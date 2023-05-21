@@ -121,7 +121,7 @@
                       $sarow = $saquery->fetch_assoc();
                       $salesaprdeduc = $sarow['aprdeduc'];
 
-                      $gross = $row['rate'] * $row['total_hr'];
+                      $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
                       $total_deduction = $deduction + $cashadvance + $salesaprdeduc;
                       $net = $gross - $total_deduction;
 
