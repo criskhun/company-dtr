@@ -30,6 +30,7 @@
           <li><a href="holiday.php"><i class="fa fa-circle-o"></i> Holiday</a></li>
             <li><a href="employee.php"><i class="fa fa-circle-o"></i> Emp List</a></li>
             <li><a href="overtime.php"><i class="fa fa-circle-o"></i> Overtime</a></li>
+            <li><a href="undertime.php"><i class="fa fa-circle-o"></i> Undertime</a></li>
             <li><a href="cashadvance.php"><i class="fa fa-circle-o"></i> Mandatory Deductions</a></li>
             <li><a href="schedule.php"><i class="fa fa-circle-o"></i> Schedules</a></li>
             
@@ -38,6 +39,7 @@
         <!-- <li><a href="sales.php"><i class="fa fa-dollar"></i> <span>Sales</span></a></li> -->
         <!-- <li><a href="bank.php"><i class="fa fa-bank"></i> <span>Maintain Bank</span></a></li> -->
         <li><a href="deduction.php"><i class="fa fa-file-text"></i> <span> Other Deductions</span></a></li>
+        <li><a href="deduction.php"><i class="fa fa-file-text"></i> <span> Allowances</span></a></li>
         <li><a href="position.php"><i class="fa fa-suitcase"></i> <span>Employee Roles</span></a></li>
         <li class="header">PRINTABLES</li>
         <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Payroll</span></a></li>
