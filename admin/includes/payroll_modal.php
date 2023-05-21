@@ -43,19 +43,12 @@ $dempid= mysqli_query($conn,$qempid);
                     	<input type="text" class="form-control" id="hours" name="hours">
                   	</div>
                 </div>
-                <!-- <div class="form-group">
-                  	<label for="mins" class="col-sm-3 control-label">No. of Mins</label>
 
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="mins" name="mins">
-                  	</div>
-                </div> -->
 				
                  <div class="form-group">
                     <label for="rate" class="col-sm-3 control-label">Per Hour Rate</label>
 
                     <div class="col-sm-9">
-                      <!-- <input type="text" class="form-control" id="rate" name="rate" required> -->
 					  <input type="text" class="form-control" id="rate" name="rate" readonly>
                     </div>
                 </div>
