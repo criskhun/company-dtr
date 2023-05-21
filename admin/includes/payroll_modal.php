@@ -15,7 +15,7 @@ $dempid= mysqli_query($conn,$qempid);
             	<h4 class="modal-title"><b>Create Payroll</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="attendance_add.php">
+            	<form class="form-horizontal" method="POST" action="payroll_add.php">
           		  <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Employee Name</label>
 					  <div class="col-sm-9">
@@ -53,7 +53,15 @@ $dempid= mysqli_query($conn,$qempid);
                     </div>
                 </div>
           	</div>
-			  
+
+			  <div class="form-group">
+                    <label for="rate" class="col-sm-3 control-label">Allowance</label>
+
+                    <div class="col-sm-9">
+					  <input type="text" class="form-control" id="allowance" name="allowance" readonly>
+                    </div>
+                </div>
+          	</div>
         
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
