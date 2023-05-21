@@ -61,17 +61,16 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT * FROM holiday";
+                    $sql = "SELECT h.*, e.firstname as firstname, e.lastname as lastname FROM employees AS e JOIN holiday AS h ON e.employee_id = h.employee_id; ";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
-                        <td class='hidden'></td>
-                        <td>".date('M d, Y', strtotime($row['date']))."</td>
-                        <td>".$row['empid']."</td>
+                        <td>".$row['employee_code']."</td>
                         <td>".$row['firstname'].' '.$row['lastname']."</td>
-                        <td>".date('h:i A', strtotime($row['time_in'])).$status."</td>
-                        <td>".date('h:i A', strtotime($row['time_out']))."</td>
+                        <td>".$row['hol_tpe']."</td>
+                        <td>".date('M d, Y', strtotime($row['date']))."</td>
+                        <td>".number_format($row['amount'], 2)."</td>
                         <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
