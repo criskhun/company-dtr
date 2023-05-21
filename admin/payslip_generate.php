@@ -114,7 +114,7 @@
 				<td width="25%" align="right"><b>Gross Pay: </b></td>
 				<td></td>
 				<td></td>
-				<td><b>'.number_format(($row['rate']*$row['total_hr']), 2).'</b></td>
+				<td><b>'.number_format($gross, 2).'</b></td>
 			</tr>
 			<h5 align="center">-------------------------------------------------------------------------DEDUCTIONS-------------------------------------------------------------------------</h5>
 			<h5 align="center">MANDATORY DEDUCTION</h5>
