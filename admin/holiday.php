@@ -52,7 +52,7 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Employee</th>
+                  <th>Employee Code</th>
                   <th>Employee Name</th>
                   <th>Holiday Type</th>
                   <th>No_Hours</th>
@@ -67,9 +67,9 @@
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
-                        <td>".$row['employee_code']."</td>
+                        <td>".$row['employee_id']."</td>
                         <td>".$row['firstname'].' '.$row['lastname']."</td>
-                        <td>".$row['hol_tpe']."</td>
+                        <td>".$row['hol_type']."</td>
                         <td>".number_format($row['amount'], 2)."</td>
                         <td>".date('M d, Y', strtotime($row['date']))."</td>
                         <td>
