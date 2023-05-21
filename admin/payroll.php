@@ -113,6 +113,8 @@
                       
                       $salesdeduct = "SELECT sa.*, SUM(sa.approvededuction) AS aprdeduc FROM sales sa LEFT JOIN employees es ON es.employee_id = sa.employee_id WHERE es.id='$empid' and status = 'Approved' AND sa.salesdate BETWEEN '$from' AND '$to' group by approvededuction";
 
+                      $allowance = "SELECT SUM(amount) from allowance";
+
                       $caquery = $conn->query($casql);
                       $carow = $caquery->fetch_assoc();
                       $cashadvance = $carow['cashamount'];
@@ -121,7 +123,7 @@
                       $sarow = $saquery->fetch_assoc();
                       $salesaprdeduc = $sarow['aprdeduc'];
 
-                      $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
+                      $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'] + $allowance;
                       $sss = 0.0363 * $gross;
                       $pagibig = 0.02 * $gross;
                       $philhealth = 100;
