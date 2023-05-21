@@ -42,7 +42,9 @@
               <?php endif; ?>
             </ul>
           </li>
-          <li><a href="deduction.php"><i class="fa fa-file-text"></i> <span> Other Deductions</span></a></li>
+          <?php if ($user['useraccess'] == 'ADMIN' || $user['useraccess'] == 'PAYROLL'): ?>
+            <li><a href="deduction.php"><i class="fa fa-file-text"></i> <span> Other Deductions</span></a></li>
+              <?php endif; ?>
           <li><a href="allowance.php"><i class="fa fa-file-text"></i> <span> Allowances</span></a></li>
           <li><a href="position.php"><i class="fa fa-suitcase"></i> <span>Employee Roles</span></a></li>
         <?php endif; ?>
