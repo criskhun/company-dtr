@@ -4,7 +4,7 @@
 	function generateRow($from, $to, $conn, $deduction){
 		$contents = '';
 	 	
-		$sql = "SELECT *, sum(num_hr) AS total_hr, SUM(sales.amount) AS totalsales, attendance.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND position.description IN ('ADMIN STAFF','TELE') GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
+		$sql = "SELECT *, sum(num_hr) AS total_hr, SUM(sales.amount) AS totalsales, attendance.employee_id AS empid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND position.description IN ('ADMIN STAFF', 'UNIT MANAGER') GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
 
 		$query = $conn->query($sql);
 		$total = 0;
@@ -24,19 +24,25 @@
 			$salesaprdeduc = $sarow['aprdeduc'];
 			$salescount = $sarow['cntaprv'];
 
-			$gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
-			$total_deduction = $deduction + $cashadvance + $salesaprdeduc;
+			$allowance = "SELECT SUM(amount) from allowance";
+
+
+			$gross = $row['rate'] * $row['total_hr'] + $row['totalsales'] + $allowance;
+            $sss = 0.0363 * $gross;
+            $pagibig = 0.02 * $gross;
+            $philhealth = 100;
+            $tax = 0.05 * ($gross - 20000);
+            $total_deduction = $deduction + $cashadvance + $salesaprdeduc + $sss + $pagibig + $tax;
       		$net = $gross - $total_deduction;
 
 			$total += $net;
 			$contents .= '
 			<tr>
 				<td>'.$row['lastname'].', '.$row['firstname'].'</td>
-				<td align="right">'.number_format($cashadvance, 2).'</td>
-				<td align="right">'.number_format($cashadvance, 2).'</td>
-				<td align="right">'.number_format($cashadvance, 2).'</td>
-				<td align="right">'.number_format($salesaprdeduc, 2).'</td>
-				<td align="right">'.number_format($salescount).'</td>
+				<td align="right">'.number_format($gross, 2).'</td>
+				<td align="right">'.number_format($allowance, 2).'</td>
+				<td align="right">'.number_format($deduction, 2).'</td>
+				<td align="right">'.number_format($total_deduction, 2).'</td>
 				<td align="right">'.number_format($net, 2).'</td>
 			</tr>
 			';
@@ -88,9 +94,8 @@
 		   <th width="20%" align="center"><b>Agent Name</b></th>
 		   <th width="13%" align="center"><b>Gross</b></th>
 		   <th width="13%" align="center"><b>Allowance</b></th>
-		   <th width="13%" align="center"><b>Cash Advance</b></th>
+		   <th width="13%" align="center"><b>Other Deduction</b></th>
 		   <th width="13%" align="center"><b>Mandatory Deduction</b></th>
-		   <th width="13%" align="center"><b>Basic Deduction</b></th>
 		   <th width="13%" align="center"><b>Net Pay</b></th> 
            </tr>  
       ';  
