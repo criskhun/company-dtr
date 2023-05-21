@@ -57,6 +57,7 @@
                   <th>Holiday Type</th>
                   <th>No_Hours</th>
                   <th>Amount</th>
+                  <th>Date</th>
                   <th>Tools</th>
                 </thead>
                 <tbody>
@@ -69,8 +70,8 @@
                         <td>".$row['employee_code']."</td>
                         <td>".$row['firstname'].' '.$row['lastname']."</td>
                         <td>".$row['hol_tpe']."</td>
-                        <td>".date('M d, Y', strtotime($row['date']))."</td>
                         <td>".number_format($row['amount'], 2)."</td>
+                        <td>".date('M d, Y', strtotime($row['date']))."</td>
                         <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
