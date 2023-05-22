@@ -1,20 +1,26 @@
 <?php
-	include 'includes/session.php';
+include 'includes/session.php';
 
-	if(isset($_POST['delete'])){
-		$id = $_POST['del_holid'];
-		$sql = "DELETE FROM holiday WHERE id ='$id'";
-		if($conn->query($sql)){
-			$_SESSION['success'] = 'Holiday deleted successfully';
-		}
-		else{
-			$_SESSION['error'] = $conn->error;
-		}
-	}
-	else{
-		$_SESSION['error'] = 'Select item to delete first';
-	}
+if (isset($_POST['delete'])) {
+    if (isset($_POST['del_holid'])) {
+        $id = $_POST['del_holid'];
+        $stmt = $conn->prepare("DELETE FROM holiday WHERE id = ?");
+        $stmt->bind_param("s", $id);
 
-	header('location: holiday.php');
-	
+        if ($stmt->execute()) {
+            $_SESSION['success'] = 'Holiday deleted successfully';
+        } else {
+            $_SESSION['error'] = $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        $_SESSION['error'] = 'No holiday ID provided';
+    }
+} else {
+    $_SESSION['error'] = 'Select item to delete first';
+}
+
+header('location: holiday.php');
+exit();
 ?>
