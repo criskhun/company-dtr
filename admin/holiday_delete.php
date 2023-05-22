@@ -5,7 +5,7 @@ if (isset($_POST['delete'])) {
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
         $stmt = $conn->prepare("DELETE FROM holiday WHERE id = ?");
-        $stmt->bind_param("s", $id);
+        $stmt->bind_param("i", $id); // Assuming the id column is of type INT
 
         if ($stmt->execute()) {
             $_SESSION['success'] = 'Holiday deleted successfully';
