@@ -118,13 +118,14 @@ function getRow(id){
     data: {id:id},
     dataType: 'json',
     success: function(response){
+      console.log(response);
       $('.holid').val(response.id);
-      $('#employee').val(response.employee);
-      $('#amount').val(response.amount);
-      $('#holiday-type').val(response.holiday-type);
-      $('#hours').val(response.hours);
-      $('#rate').val(response.rate);
-      $('#del_holid').html(response.employee);
+      $('#edit_employee').val(response.employee);
+      $('#edit_amount').val(response.amount);
+      $('#edit_holiday-type').val(response.holiday-type);
+      $('#edit_hours').val(response.hours);
+      $('#edit_rate').val(response.rate);
+      $('#del_holiday').html(response.employee);
     }
   });
 }

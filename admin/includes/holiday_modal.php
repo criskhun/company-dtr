@@ -104,7 +104,7 @@ $dempid= mysqli_query($conn,$qempid);
 <div class="form-group">
     <label for="holiday-type" class="col-sm-3 control-label">Holiday Type</label>
     <div class="col-sm-9">
-        <select class="form-control" id="holiday-type" name="holiday-type" required>
+        <select class="form-control" id="edit_holiday-type" name="holiday-type" required>
             <option value="" selected disabled>- Select Holiday Type -</option>
             <option value="regular">Regular Holiday</option>
             <option value="special">Special Holiday</option>
@@ -117,7 +117,7 @@ $dempid= mysqli_query($conn,$qempid);
                   	<label for="hours" class="col-sm-3 control-label">No. of Hours</label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="hours" name="hours">
+                    	<input type="text" class="form-control" id="edit_holiday-typehours" name="hours">
                   	</div>
                 </div>
 
@@ -125,7 +125,7 @@ $dempid= mysqli_query($conn,$qempid);
                   	<label for="hours" class="col-sm-3 control-label">Amount Paid</label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="amount" name="amount">
+                    	<input type="text" class="form-control" id="edit_holiday-typeamount" name="amount">
                   	</div>
                 </div>
 
