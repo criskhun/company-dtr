@@ -130,7 +130,7 @@ function getRow(id){
       $('#datepicker_edit').val(response.date);
 
       // Set the ID value for delete modal as well
-      $('.del_holid').val(response.id);
+      $('.del_holiday').val(response.id);
     }
   });
 }
@@ -140,7 +140,7 @@ $(".table").on("click", ".delete", function(e) {
   e.preventDefault();
   $('#delete').modal('show');
   var id = $(this).data('id');
-  $('.del_holid').val(id);
+  $('.del_holiday').val(id);
 });
 
 </script>
