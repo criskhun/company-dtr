@@ -2,8 +2,8 @@
 	include 'includes/session.php';
 
 	if(isset($_POST['delete'])){
-		$id = $_POST['id'];
-		$sql = "DELETE FROM holiday WHERE id = '$id'";
+		$id = $_POST['del_holid'];
+		$sql = "DELETE FROM holiday WHERE id ='$id'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Holiday deleted successfully';
 		}
