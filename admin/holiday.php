@@ -120,9 +120,10 @@ function getRow(id){
     success: function(response){
       console.log(response);
       $('.holid').val(response.id);
-      $('#edit_holiday-type').val(response.holiday-type);
+      $('#edit_holiday-type').val(response.)hol_type;
       $('#edit_holiday-typehours').val(response.hours);
       $('#edit_holiday-typeamount').val(response.amount);
+      $('#datepicker_edit').val(response.date);
       $('#del_holiday').html(response.employee);
     }
   });
