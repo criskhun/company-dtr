@@ -124,7 +124,7 @@ function getRow(id){
       $('#edit_holiday-typehours').val(response.hours);
       $('#edit_holiday-typeamount').val(response.amount);
       $('#datepicker_edit').val(response.date);
-      $('#del_holiday').html(response.employee);
+      $('#del_holiday').html(response.id);
     }
   });
 }
