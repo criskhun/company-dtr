@@ -2,8 +2,8 @@
 include 'includes/session.php';
 
 if (isset($_POST['delete'])) {
-    if (isset($_POST['del_holid'])) {
-        $id = $_POST['del_holid'];
+    if (isset($_POST['id'])) {
+        $id = $_POST['id'];
         $stmt = $conn->prepare("DELETE FROM holiday WHERE id = ?");
         $stmt->bind_param("s", $id);
 
