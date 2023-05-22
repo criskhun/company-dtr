@@ -1,5 +1,8 @@
 <?php
 include 'includes/session.php';
+// Log the request data
+error_log("Delete Request Data: " . print_r($_POST, true));
+
 
 if (isset($_POST['delete'])) {
     if (isset($_POST['id'])) {
