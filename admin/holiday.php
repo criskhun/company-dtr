@@ -103,12 +103,12 @@ $(function(){
     getRow(id);
   });
 
-  $('.delete').click(function(e){
+  $( ".table" ).on( "click", ".delete", function(e) {
     e.preventDefault();
     $('#delete').modal('show');
     var id = $(this).data('id');
     getRow(id);
-  });
+});
 });
 
 function getRow(id){
@@ -124,7 +124,6 @@ function getRow(id){
       $('#edit_holiday-typehours').val(response.hours);
       $('#edit_holiday-typeamount').val(response.amount);
       $('#datepicker_edit').val(response.date);
-      $('#del_holiday').html(response.id);
     }
   });
 }
