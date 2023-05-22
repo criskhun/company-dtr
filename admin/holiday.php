@@ -107,20 +107,19 @@ $(function(){
     getRow(id);
   });
 
-  $( ".table" ).on( "click", ".delete", function(e) {
+  $(".table").on("click", ".delete", function(e) {
     e.preventDefault();
     $('#delete').modal('show');
     var id = $(this).data('id');
     getRow(id);
-});
-
+  });
 });
 
 function getRow(id){
   $.ajax({
     type: 'POST',
     url: 'holiday_row.php',
-    data: {id:id},
+    data: {id: id},
     dataType: 'json',
     success: function(response){
       console.log(response);
@@ -129,9 +128,22 @@ function getRow(id){
       $('#edit_holiday-typehours').val(response.hours);
       $('#edit_holiday-typeamount').val(response.amount);
       $('#datepicker_edit').val(response.date);
+
+      // Set the ID value for delete modal as well
+      $('.del_holid').val(response.id);
     }
   });
 }
+
+// Modify the delete function to pass the ID value to the delete modal
+$(".table").on("click", ".delete", function(e) {
+  e.preventDefault();
+  $('#delete').modal('show');
+  var id = $(this).data('id');
+  $('.del_holid').val(id);
+});
+
 </script>
+
 </body>
 </html>
