@@ -185,5 +185,18 @@ $(document).ready(function(){
       $('#rate').val(data);
     });
   });
+
+  $('#hours').keyup(function(){
+    calculateAmount();
+  });
 });
+
+function calculateAmount() {
+  var ratePerHour = parseFloat($('#rate').val());
+  var hours = parseFloat($('#hours').val());
+  var holidayType = $('#holiday-type').val();
+  var amountPaid = ratePerHour * hours * (holidayType === 'regular' ? 1 : 0.3);
+
+  $('#amount').val(amountPaid.toFixed(2));
+}
 </script>
