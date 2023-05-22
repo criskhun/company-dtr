@@ -25,5 +25,5 @@ if (isset($_POST['delete'])) {
 }
 
 header('location: holiday.php');
-exit();
+// exit();
 ?>
