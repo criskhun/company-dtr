@@ -84,7 +84,7 @@ $dempid= mysqli_query($conn,$qempid);
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="cashadvance_edit.php">
-            		<input type="hidden" class="caid" name="id">
+            		<input type="hidden" class="caid" name="id" id="edit_empid">
                 <div class="form-group">
                     <label for="edit_amount" class="col-sm-3 control-label">Cash Advance</label>
 
@@ -160,7 +160,7 @@ $dempid= mysqli_query($conn,$qempid);
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script> 
 // Add event listener to employee name dropdown
-document.getElementById('empid').addEventListener('change', function() {
+document.getElementById('edit_empid').addEventListener('change', function() {
   var empid = this.value;
   
   // Retrieve employee's gross salary (replace with your own method)
@@ -173,10 +173,10 @@ document.getElementById('empid').addEventListener('change', function() {
   var tax = (0.05 * (grossSalary - 20000)).toFixed(2);
   
   // Update the corresponding fields
-  document.getElementById('sss').value = sss;
-  document.getElementById('pagibig').value = pagibig;
-  document.getElementById('philhealth').value = philhealth;
-  document.getElementById('tax').value = tax;
+  document.getElementById('edit_sss').value = sss;
+  document.getElementById('edit_pagibig').value = pagibig;
+  document.getElementById('edit_philhealth').value = philhealth;
+  document.getElementById('edit_tax').value = tax;
 });
 
 // Function to retrieve employee's gross salary
