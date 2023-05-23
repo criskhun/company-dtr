@@ -157,52 +157,6 @@ $dempid= mysqli_query($conn,$qempid);
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-var elements = document.getElementsByClassName('caid');
-
-for (var i = 0; i < elements.length; i++) {
-  var element = elements[i];
-  element.addEventListener('change', function() {
-    var empid = this.value;
-
-    // Retrieve employee's gross salary (replace with your own method)
-    var grossSalary = getGrossSalary(empid);
-
-    // Perform computations
-    var sss = (0.0363 * grossSalary).toFixed(2);
-    var pagibig = (0.02 * grossSalary).toFixed(2);
-    var philhealth = 100;
-    var tax = (0.05 * (grossSalary - 20000)).toFixed(2);
-
-    // Update the corresponding fields
-    document.getElementById('edit_sss').value = sss;
-    document.getElementById('edit_pagibig').value = pagibig;
-    document.getElementById('edit_philhealth').value = philhealth;
-    document.getElementById('edit_tax').value = tax;
-
-  });
-}
-
-// Function to retrieve employee's gross salary
-function getGrossSalary(empid) {
-  // Implement your logic here to fetch the employee's gross salary from the database
-  // You can use AJAX or any server-side method to perform the retrieval
-
-  // Example implementation using hardcoded values for demonstration purposes
-  var grossSalary;
-
-  if (empid == 1) {
-    grossSalary = 50000;
-  } else if (empid == 2) {
-    grossSalary = 60000;
-  } else {
-    grossSalary = 0;
-  }
-
-  return grossSalary;
-}
-</script>
 
 
      
