@@ -97,14 +97,14 @@ $dempid= mysqli_query($conn,$qempid);
                     <label for="edit_sss" class="col-sm-3 control-label">SSS</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_sss" name="sss" required>
+                      <input type="text" class="form-control" id="edit_sss" name="sss" value="0.00" required>
                     </div>
                 </div>
 				<div class="form-group">
                     <label for="edit_pagibig" class="col-sm-3 control-label">Pagibig</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_pagibig" name="pagibig" required>
+                      <input type="text" class="form-control" id="edit_pagibig" name="pagibig" value="0.00" required>
                     </div>
                 </div>
 				<div class="form-group">
