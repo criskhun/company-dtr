@@ -65,7 +65,7 @@
             </thead>
             <tbody>
               <?php
-                $sql = "SELECT h.*, e.firstname as firstname, e.lastname as lastname FROM employees AS e JOIN holiday AS h ON e.employee_id = h.employee_id";
+                $sql = "SELECT h.*,h.id as id e.firstname as firstname, e.lastname as lastname FROM employees AS e JOIN holiday AS h ON e.employee_id = h.employee_id";
                 $query = $conn->query($sql);
                 while ($row = $query->fetch_assoc()) {
                   echo "
@@ -77,8 +77,8 @@
                       <td>".number_format($row['amount'], 2)."</td>
                       <td>".date('M d, Y', strtotime($row['date']))."</td>
                       <td>
-                        <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
-                        <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
+                      <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
+                      <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
                       </td>
                     </tr>
                   ";
@@ -106,6 +106,14 @@ $(function(){
     var id = $(this).data('id');
     getRow(id);
   });
+
+$( ".table" ).on( "click", ".delete", function(e) {
+    e.preventDefault();
+    $('#delete').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+});
+
 });
 
 function getRow(id){
@@ -116,25 +124,15 @@ function getRow(id){
     dataType: 'json',
     success: function(response){
       console.log(response);
-      $('.holid').val(response.id);
+      $('.decid').val(response.id);
       $('#edit_holiday-type').val(response.hol_type);
       $('#edit_holiday-typehours').val(response.hours);
       $('#edit_holiday-typeamount').val(response.amount);
       $('#datepicker_edit').val(response.date);
-
-      // Set the ID value for delete modal as well
-      $('.del_holiday').val(response.id);
+      $('#del_deduction').html(response.description);
     }
   });
 }
-
-// Modify the delete function to pass the ID value to the delete modal
-$(".table").on("click", ".delete", function(e) {
-  e.preventDefault();
-  $('#delete').modal('show');
-  var id = $(this).data('id');
-  $('.del_holiday').val(id);
-});
 
 </script>
 
