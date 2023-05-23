@@ -129,13 +129,13 @@
 				<td width="25%" align="right">PAG-IBIG: </td>
 				<td>'.number_format($pagibig, 2).'</td>
 				<td width="25%" align="right">TAX: </td>
-				<td>'.number_format($tax, 2).'</td>
+				<td>'.number_format(abs($tax), 2).'</td>
 			</tr>
 			<tr>
 				<td width="25%" align="right"><b>Total Mandatory Deduction: </b></td>
 				<td></td>
 				<td></td>
-				<td><b>'.number_format($deduction, 2).'</b></td>
+				<td><b>'.number_format(abs($deduction), 2).'</b></td>
 			</tr>
 			<h5 align="center">BASIC</h5>
 			<tr>
@@ -154,14 +154,14 @@
 				<td width="25%" align="right"><b>Total Deduction: </b></td>
 				<td></td>
 				<td></td>
-				<td><b>'.number_format($total_deduction, 2).'</b></td>
+				<td><b>'.number_format(abs($total_deduction), 2).'</b></td>
 			</tr>
 			<h5 align="center">-----------------------------------------------------------------------------NET PAY-----------------------------------------------------------------------------</h5>
 			<tr>
 				<td width="25%" align="right"><b>Allowance: </b></td>
 				<td>'.number_format($allowance, 2).'</td>
 				<td width="25%" align="right">NET Pay: </td>
-				<td><b>'.number_format($net, 2).'</b></td>
+				<td><b>'.number_format(abs($net), 2).'</b></td>
 			</tr>
    	    </table>  
 		<br>

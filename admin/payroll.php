@@ -137,8 +137,8 @@
                           <td>".$row['employee_id']."</td>
                           <td>".number_format($gross, 2)."</td>
                           <td>".number_format($deduction, 2)."</td>
-                          <td>".number_format($total_deduction, 2)."</td>
-                          <td>".number_format($net, 2)."</td>
+                          <td>".number_format(abs($total_deduction), 2)."</td>
+                          <td>".number_format(abs($net), 2)."</td>
                         </tr>
                       ";
                     }
