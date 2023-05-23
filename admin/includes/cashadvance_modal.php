@@ -84,7 +84,7 @@ $dempid= mysqli_query($conn,$qempid);
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="cashadvance_edit.php">
-            		<input type="hidden" class="caid" name="id" id="edit_empid">
+            		<input type="hidden" class="caid" name="id">
                 <div class="form-group">
                     <label for="edit_amount" class="col-sm-3 control-label">Cash Advance</label>
 
@@ -177,6 +177,11 @@ document.getElementById('edit_empid').addEventListener('change', function() {
   document.getElementById('edit_pagibig').value = pagibig;
   document.getElementById('edit_philhealth').value = philhealth;
   document.getElementById('edit_tax').value = tax;
+
+    // Add existing class based on hidden input value
+    var caid = document.querySelector('.caid').value;
+  var hiddenInput = document.querySelector('.caid');
+  hiddenInput.classList.add('existing-class');
 });
 
 // Function to retrieve employee's gross salary
