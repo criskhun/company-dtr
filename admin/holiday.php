@@ -65,7 +65,7 @@
             </thead>
             <tbody>
               <?php
-                $sql = "SELECT h.*,h.id as id e.firstname as firstname, e.lastname as lastname FROM employees AS e JOIN holiday AS h ON e.employee_id = h.employee_id";
+                $sql = "SELECT h.*,h.id as id, e.firstname as firstname, e.lastname as lastname FROM employees AS e JOIN holiday AS h ON e.employee_id = h.employee_id";
                 $query = $conn->query($sql);
                 while ($row = $query->fetch_assoc()) {
                   echo "
