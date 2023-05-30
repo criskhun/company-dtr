@@ -12,7 +12,7 @@
 		<p><i class="fa fa-address-card"></i>&nbsp;  GNET Group of Companies</p>
   	</div>
   
-  	<div class="login-box-body">
+  	<!-- <div class="login-box-body">
     	<p class="login-box-msg">Sign in to start your session</p>
 
     	<form action="login.php" method="POST">
@@ -31,7 +31,9 @@
 
       		</div>
     	</form>
-  	</div>
+  	</div> -->
+
+	
 	  <!--button  onclick="window.location.href='/apsystem/'" class="btn btn-primary btn-block btn-flat"><i class="fa fa-user-o"></i>&nbsp;   Time Stamp Sign In</button-->
     <button  onclick="window.location.href='/emp/'" class="btn btn-primary btn-block btn-flat"><i class="fa fa-user-o"></i>&nbsp;   Employee Login</button>
   	<?php
