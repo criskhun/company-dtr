@@ -5,7 +5,7 @@ $qempid = "select distinct employee_id, firstname, lastname from employees";
 $dempid= mysqli_query($conn,$qempid);
 ?>
 
-<!-- Add -->
+<Add >
 <div class="modal fade" id="addnewpay">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -72,7 +72,7 @@ $dempid= mysqli_query($conn,$qempid);
     </div>
 </div>
 
-<!-- Edit -->
+<Edit>
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -112,7 +112,7 @@ $dempid= mysqli_query($conn,$qempid);
     </div>
 </div>
 
-<!-- Delete -->
+<!-- Delete>
 <div class="modal fade" id="delete">
     <div class="modal-dialog">
         <div class="modal-content">
