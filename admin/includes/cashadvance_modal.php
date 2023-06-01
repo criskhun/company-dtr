@@ -12,7 +12,7 @@ $dempid= mysqli_query($conn,$qempid);
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Add Cash Advance</b></h4>
+            	<h4 class="modal-title"><b>Add Mandatory Deductions</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="cashadvance_add.php">
@@ -53,7 +53,7 @@ $dempid= mysqli_query($conn,$qempid);
                     <label for="philhealth" class="col-sm-3 control-label">Philhealth</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="philhealth" name="philhealth" value="0.00" required>
+                      <input type="text" class="form-control" id="philhealth" name="philhealth" value="100.00" required>
                     </div>
                 </div>
 				<div class="form-group">
@@ -86,7 +86,7 @@ $dempid= mysqli_query($conn,$qempid);
             	<form class="form-horizontal" method="POST" action="cashadvance_edit.php">
             		<input type="hidden" class="caid" name="id">
                 <div class="form-group">
-                    <label for="edit_amount" class="col-sm-3 control-label">Cash Advance</label>
+                    <label for="edit_amount" class="col-sm-3 control-label">Mandatory Deductions</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_amount" name="amount" required>
@@ -145,7 +145,7 @@ $dempid= mysqli_query($conn,$qempid);
             	<form class="form-horizontal" method="POST" action="cashadvance_delete.php">
             		<input type="hidden" class="caid" name="id">
             		<div class="text-center">
-	                	<p>DELETE CASH ADVANCE</p>
+	                	<p>DELETE Mandatory Deductions</p>
 	                	<h2 class="employee_name bold"></h2>
 	            	</div>
           	</div>

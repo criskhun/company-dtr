@@ -70,9 +70,9 @@
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'];
-                      $sss = 0.0363 * $gross;
-                      $pagibig = 0.02 * $gross;
-                      $philhealth = 100;
+                      $sss = $row['sss'] * $gross;
+                      $pagibig = $row['pagibig'] * $gross;
+                      $philhealth = $row['philhealth'];
                       $tax = 0.05 * ($gross - 20000);
 
 
