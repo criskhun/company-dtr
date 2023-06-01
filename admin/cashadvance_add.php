@@ -2,7 +2,7 @@
 	include 'includes/session.php';
 
 	if(isset($_POST['add'])){
-		$employee = $_POST['employee'];
+		$employee = $_POST['empid'];
 		$amount = $_POST['amount'];
 		$sss = $_POST['sss'];
 		$pagibig = $_POST['pagibig'];
