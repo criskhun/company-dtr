@@ -49,6 +49,7 @@
             <div class="box-header with-border">
                <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
             </div>
+            <h1>BAS</h1>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
