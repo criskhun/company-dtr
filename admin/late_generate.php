@@ -12,7 +12,6 @@
 		while($row = $query->fetch_assoc()){
 			$contents .= "
 			<tr>
-			<td class='hidden'></td>
 			<td>".date('M d, Y', strtotime($row['date']))."</td>
 			<td>".$row['empid']."</td>
 			<td>".$row['firstname'].' '.$row['lastname']."</td>
