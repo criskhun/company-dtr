@@ -16,11 +16,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Payroll
+        Generate Late Employee Reports
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Payroll</li>
+        <li class="active">Late Reports</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -69,80 +69,41 @@
                     </div>
                     <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range" value="<?php echo (isset($_GET['range'])) ? $_GET['range'] : $range_from.' - '.$range_to; ?>">
                   </div>
-                  <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-print"></span> Admin Payroll</button>
-                  <button type="button" class="btn btn-primary btn-sm btn-flat" id="payslip"><span class="glyphicon glyphicon-print"></span> Payslip</button>
+                  <button type="button" class="btn btn-primary btn-sm btn-flat" id="payslip"><span class="glyphicon glyphicon-print"></span> Print Report</button>
                 </form>
               </div>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Employee Name</th>
+                  <th>Date</th>
                   <th>Employee ID</th>
-                  <th>Gross</th>
-                  <th>Other Deductions</th>
-                  <th>Total Mandatory Deductions</th>
-                  <th>Net Pay</th>
+                  <th>Name</th>
+                  <th>Time In</th>
+                  <th>Time Out</th>
+                  <th>Tools</th>
                 </thead>
                 <tbody>
-                  <?php
-                    $sql = "SELECT *, SUM(amount) as total_amount FROM deductions";
+                <?php
+                    $sql = "SELECT *, employees.employee_id AS empid, attendance.id AS attid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id ORDER BY attendance.date DESC, attendance.time_in DESC";
                     $query = $conn->query($sql);
-                    $drow = $query->fetch_assoc();
-                    $deduction = $drow['total_amount'];
-   
-                    
-                    $to = date('Y-m-d');
-                    $from = date('Y-m-d', strtotime('-30 day', strtotime($to)));
-
-                    if(isset($_GET['range'])){
-                      $range = $_GET['range'];
-                      $ex = explode(' - ', $range);
-                      $from = date('Y-m-d', strtotime($ex[0]));
-                      $to = date('Y-m-d', strtotime($ex[1]));
-                    }
-
-                    $sql = "SELECT *, SUM(num_hr) AS total_hr,  SUM(sales.amount) AS totalsales, attendance.employee_id AS empi, employees.employee_id as employee_id FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id LEFT JOIN position ON position.id=employees.position_id LEFT JOIN sales ON sales.employee_id=employees.employee_id WHERE date BETWEEN '$from' AND '$to' AND position.description IN ('ADMIN STAFF', 'UNIT MANAGER') GROUP BY attendance.employee_id ORDER BY employees.lastname ASC, employees.firstname ASC";
-
-                    $query = $conn->query($sql);
-                    $total = 0;
                     while($row = $query->fetch_assoc()){
-                      $empid = $row['empid'];
-                      
-                      $casql = "SELECT *, SUM(amount)+ SUM(sss)+ SUM(pagibig)+ SUM(philhealth)+ SUM(tax) AS cashamount FROM cashadvance WHERE employee_id='$empid' AND date_advance BETWEEN '$from' AND '$to' group by amount,sss,pagibig,philhealth,tax";
-                      
-                      $salesdeduct = "SELECT sa.*, SUM(sa.approvededuction) AS aprdeduc FROM sales sa LEFT JOIN employees es ON es.employee_id = sa.employee_id WHERE es.id='$empid' and status = 'Approved' AND sa.salesdate BETWEEN '$from' AND '$to' group by approvededuction";
-
-                      $allowance = "SELECT SUM(amount) from allowance";
-
-                      $caquery = $conn->query($casql);
-                      $carow = $caquery->fetch_assoc();
-                      $cashadvance = $carow['cashamount'];
-
-                      $saquery = $conn->query($salesdeduct); 
-                      $sarow = $saquery->fetch_assoc();
-                      $salesaprdeduc = $sarow['aprdeduc'];
-
-                      $gross = $row['rate'] * $row['total_hr'] + $row['totalsales'] + $allowance;
-                      $sss = 0.0363 * $gross;
-                      $pagibig = 0.02 * $gross;
-                      $philhealth = 100;
-                      $tax = 0.05 * ($gross - 20000);
-                      $total_deduction = $deduction + $cashadvance + $salesaprdeduc + $sss + $pagibig + $tax;
-                      $net = $gross - $total_deduction;
-
+                      $status = ($row['status'])?'<span class="label label-warning pull-right">ontime</span>':'<span class="label label-danger pull-right">late</span>';
                       echo "
                         <tr>
-                          <td>".$row['lastname'].", ".$row['firstname']."</td>
-                          <td>".$row['employee_id']."</td>
-                          <td>".number_format($gross, 2)."</td>
-                          <td>".number_format($deduction, 2)."</td>
-                          <td>".number_format(abs($total_deduction), 2)."</td>
-                          <td>".number_format(abs($net), 2)."</td>
+                          <td class='hidden'></td>
+                          <td>".date('M d, Y', strtotime($row['date']))."</td>
+                          <td>".$row['empid']."</td>
+                          <td>".$row['firstname'].' '.$row['lastname']."</td>
+                          <td>".date('h:i A', strtotime($row['time_in'])).$status."</td>
+                          <td>".date('h:i A', strtotime($row['time_out']))."</td>
+                          <td>
+                            <button class='btn btn-success btn-sm btn-flat edit' data-id='".$row['attid']."'><i class='fa fa-edit'></i> Edit</button>
+                            <button class='btn btn-danger btn-sm btn-flat delete' data-id='".$row['attid']."'><i class='fa fa-trash'></i> Delete</button>
+                          </td>
                         </tr>
                       ";
                     }
- 
                   ?>
                 </tbody>
               </table>
