@@ -8,14 +8,17 @@
 		$sql = "SELECT *, employees.employee_id AS empid, attendance.id AS attid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id where attendance.date BETWEEN '$from' AND '$to' and attendance.status = 0 ORDER BY attendance.date DESC, attendance.time_in DESC";;
 
 		$query = $conn->query($sql);
-		$total = 0;
-		while($row = $query->fetch_assoc()){
-			$contents .= "
-			<tr>
-				<td>".$row['lastname'].", ".$row['firstname']."</td>
-				<td>".$row['employee_id']."</td>
-				<td>".date('h:i A', strtotime($row['time_in'])).' - '. date('h:i A', strtotime($row['time_out']))."</td>
-			</tr>
+                    while($row = $query->fetch_assoc()){
+                      $status = ($row['status'])?'<span class="label label-warning pull-right">ontime</span>':'<span class="label label-danger pull-right">late</span>';
+                      echo "
+                        <tr>
+                          <td class='hidden'></td>
+                          <td>".date('M d, Y', strtotime($row['date']))."</td>
+                          <td>".$row['empid']."</td>
+                          <td>".$row['firstname'].' '.$row['lastname']."</td>
+                          <td>".date('h:i A', strtotime($row['time_in'])).$status."</td>
+                          <td>".date('h:i A', strtotime($row['time_out']))."</td>
+                        </tr>
 			";
 		}
 
