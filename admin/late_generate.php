@@ -5,7 +5,7 @@
 
 		$contents = '';
 		
-		$sql = "SELECT *, employees.employee_id AS empid, attendance.id AS attid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id where attendance.date BETWEEN '$from' AND '$to' and attendance.status = 1 ORDER BY attendance.date DESC, attendance.time_in DESC";;
+		$sql = "SELECT *, employees.employee_id AS empid, attendance.id AS attid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id where attendance.date BETWEEN '$from' AND '$to' and attendance.status = 0 ORDER BY attendance.date DESC, attendance.time_in DESC";;
 
 		$query = $conn->query($sql);
 		$total = 0;
