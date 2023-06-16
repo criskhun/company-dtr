@@ -168,7 +168,7 @@ $(function(){
 
   $('#payslip').click(function(e){
     e.preventDefault();
-    $('#payForm').attr('action', 'payslip_generate.php');
+    $('#payForm').attr('action', 'late_generate.php');
     $('#payForm').attr('target', '_blank'); // add target attribute
     $('#payForm').submit();
   });
