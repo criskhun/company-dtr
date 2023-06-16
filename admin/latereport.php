@@ -142,7 +142,7 @@ $(function(){
 
   $("#reservation").on('change', function(){
     var range = encodeURI($(this).val());
-    window.location = 'payroll.php?range='+range;
+    window.location = 'latereport.php?range='+range;
   });
  
   $('#wpayroll').click(function(e){
