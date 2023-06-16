@@ -50,11 +50,11 @@
       	<h4 align="center">Employee Late Report</h4>
       	<table border="1" cellspacing="0" cellpadding="3">  
            <tr>  
-           		<th width="40%" align="center"><b>Date</b></th>
-                <th width="30%" align="center"><b>Employee ID</b></th>
-				<th width="30%" align="center"><b>Name</b></th>
-				<th width="30%" align="center"><b>Time In</b></th> 
-				<th width="30%" align="center"><b>Time Out</b></th> 
+           		<th width="20%" align="center"><b>Date</b></th>
+                <th width="20%" align="center"><b>Employee ID</b></th>
+				<th width="20%" align="center"><b>Name</b></th>
+				<th width="20%" align="center"><b>Time In</b></th> 
+				<th width="20%" align="center"><b>Time Out</b></th> 
            </tr>  
       ';  
     $content .= generateRow($from, $to, $conn); 
