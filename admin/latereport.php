@@ -85,7 +85,13 @@
                 </thead>
                 <tbody>
                 <?php
-                    $sql = "SELECT *, employees.employee_id AS empid, attendance.id AS attid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id ORDER BY attendance.date DESC, attendance.time_in DESC";
+                if(isset($_GET['range'])){
+                  $range = $_GET['range'];
+                  $ex = explode(' - ', $range);
+                  $from = date('Y-m-d', strtotime($ex[0]));
+                  $to = date('Y-m-d', strtotime($ex[1]));
+                }
+                    $sql = "SELECT *, employees.employee_id AS empid, attendance.id AS attid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id where attendance.date BETWEEN '$from' AND '$to' ORDER BY attendance.date DESC, attendance.time_in DESC";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       $status = ($row['status'])?'<span class="label label-warning pull-right">ontime</span>':'<span class="label label-danger pull-right">late</span>';
