@@ -54,6 +54,7 @@
         <?php if ($user['useraccess'] == 'ADMIN' || $user['useraccess'] == 'MANAGER' || $user['useraccess'] == 'PAYROLL'): ?>
           <li class="header">PRINTABLES</li>
           <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Payroll</span></a></li>
+          <li><a href="latereport.php"><i class="fa fa-clock-o"></i> <span>Late Reports</span></a></li>
           <li><a href="schedule_employee.php"><i class="fa fa-clock-o"></i> <span>Schedule</span></a></li>
         <?php endif; ?>
       </ul>
